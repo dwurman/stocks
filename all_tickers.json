@@ -1,0 +1,3506 @@
+{
+  "scraped_at": "2025-08-13 09:58:43",
+  "total_tickers": 500,
+  "tickers": [
+    {
+      "symbol": "A",
+      "url": "/stocks/a/",
+      "company_name": "Agilent Technologies, Inc.",
+      "market_cap": "Diagnostics & Research",
+      "price": "33.62B"
+    },
+    {
+      "symbol": "AA",
+      "url": "/stocks/aa/",
+      "company_name": "Alcoa Corporation",
+      "market_cap": "Aluminum",
+      "price": "8.16B"
+    },
+    {
+      "symbol": "AACB",
+      "url": "/stocks/aacb/",
+      "company_name": "Artius II Acquisition Inc.",
+      "market_cap": "Shell Companies",
+      "price": "298.12M"
+    },
+    {
+      "symbol": "AACG",
+      "url": "/stocks/aacg/",
+      "company_name": "ATA Creativity Global",
+      "market_cap": "Education & Training Services",
+      "price": "51.92M"
+    },
+    {
+      "symbol": "AACI",
+      "url": "/stocks/aaci/",
+      "company_name": "Armada Acquisition Corp. II",
+      "market_cap": "Shell Companies",
+      "price": "306.24M"
+    },
+    {
+      "symbol": "AACT",
+      "url": "/stocks/aact/",
+      "company_name": "Ares Acquisition Corporation II",
+      "market_cap": "Shell Companies",
+      "price": "703.96M"
+    },
+    {
+      "symbol": "AAL",
+      "url": "/stocks/aal/",
+      "company_name": "American Airlines Group Inc.",
+      "market_cap": "Airlines",
+      "price": "8.53B"
+    },
+    {
+      "symbol": "AAM",
+      "url": "/stocks/aam/",
+      "company_name": "AA Mission Acquisition Corp.",
+      "market_cap": "Shell Companies",
+      "price": "459.53M"
+    },
+    {
+      "symbol": "AAME",
+      "url": "/stocks/aame/",
+      "company_name": "Atlantic American Corporation",
+      "market_cap": "Insurance - Life",
+      "price": "47.73M"
+    },
+    {
+      "symbol": "AAMI",
+      "url": "/stocks/aami/",
+      "company_name": "Acadian Asset Management Inc.",
+      "market_cap": "Asset Management",
+      "price": "1.72B"
+    },
+    {
+      "symbol": "AAOI",
+      "url": "/stocks/aaoi/",
+      "company_name": "Applied Optoelectronics, Inc.",
+      "market_cap": "Communication Equipment",
+      "price": "1.50B"
+    },
+    {
+      "symbol": "AAON",
+      "url": "/stocks/aaon/",
+      "company_name": "AAON, Inc.",
+      "market_cap": "Building Products & Equipment",
+      "price": "6.98B"
+    },
+    {
+      "symbol": "AAP",
+      "url": "/stocks/aap/",
+      "company_name": "Advance Auto Parts, Inc.",
+      "market_cap": "Auto Parts",
+      "price": "3.57B"
+    },
+    {
+      "symbol": "AAPG",
+      "url": "/stocks/aapg/",
+      "company_name": "Ascentage Pharma Group International",
+      "market_cap": "Biotechnology",
+      "price": "3.84B"
+    },
+    {
+      "symbol": "AAPL",
+      "url": "/stocks/aapl/",
+      "company_name": "Apple Inc.",
+      "market_cap": "Consumer Electronics",
+      "price": "3,438.96B"
+    },
+    {
+      "symbol": "AARD",
+      "url": "/stocks/aard/",
+      "company_name": "Aardvark Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "222.38M"
+    },
+    {
+      "symbol": "AAT",
+      "url": "/stocks/aat/",
+      "company_name": "American Assets Trust, Inc.",
+      "market_cap": "REIT - Diversified",
+      "price": "1.51B"
+    },
+    {
+      "symbol": "AAUC",
+      "url": "/stocks/aauc/",
+      "company_name": "Allied Gold Corporation",
+      "market_cap": "Gold",
+      "price": "1.38B"
+    },
+    {
+      "symbol": "AB",
+      "url": "/stocks/ab/",
+      "company_name": "AllianceBernstein Holding L.P.",
+      "market_cap": "Asset Management",
+      "price": "4.46B"
+    },
+    {
+      "symbol": "ABAT",
+      "url": "/stocks/abat/",
+      "company_name": "American Battery Technology Company",
+      "market_cap": "Waste Management",
+      "price": "222.98M"
+    },
+    {
+      "symbol": "ABBV",
+      "url": "/stocks/abbv/",
+      "company_name": "AbbVie Inc.",
+      "market_cap": "Drug Manufacturers - General",
+      "price": "355.43B"
+    },
+    {
+      "symbol": "ABCB",
+      "url": "/stocks/abcb/",
+      "company_name": "Ameris Bancorp",
+      "market_cap": "Banks - Regional",
+      "price": "4.83B"
+    },
+    {
+      "symbol": "ABCL",
+      "url": "/stocks/abcl/",
+      "company_name": "AbCellera Biologics Inc.",
+      "market_cap": "Biotechnology",
+      "price": "1.34B"
+    },
+    {
+      "symbol": "ABEO",
+      "url": "/stocks/abeo/",
+      "company_name": "Abeona Therapeutics Inc.",
+      "market_cap": "Biotechnology",
+      "price": "333.54M"
+    },
+    {
+      "symbol": "ABEV",
+      "url": "/stocks/abev/",
+      "company_name": "Ambev S.A.",
+      "market_cap": "Beverages - Brewers",
+      "price": "35.36B"
+    },
+    {
+      "symbol": "ABG",
+      "url": "/stocks/abg/",
+      "company_name": "Asbury Automotive Group, Inc.",
+      "market_cap": "Auto & Truck Dealerships",
+      "price": "4.64B"
+    },
+    {
+      "symbol": "ABL",
+      "url": "/stocks/abl/",
+      "company_name": "Abacus Global Management, Inc.",
+      "market_cap": "Insurance - Life",
+      "price": "640.88M"
+    },
+    {
+      "symbol": "ABLV",
+      "url": "/stocks/ablv/",
+      "company_name": "Able View Global Inc.",
+      "market_cap": "Advertising Agencies",
+      "price": "44.94M"
+    },
+    {
+      "symbol": "ABM",
+      "url": "/stocks/abm/",
+      "company_name": "ABM Industries Incorporated",
+      "market_cap": "Specialty Business Services",
+      "price": "3.05B"
+    },
+    {
+      "symbol": "ABNB",
+      "url": "/stocks/abnb/",
+      "company_name": "Airbnb, Inc.",
+      "market_cap": "Travel Services",
+      "price": "75.27B"
+    },
+    {
+      "symbol": "ABOS",
+      "url": "/stocks/abos/",
+      "company_name": "Acumen Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "77.53M"
+    },
+    {
+      "symbol": "ABP",
+      "url": "/stocks/abp/",
+      "company_name": "Abpro Holdings, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "15.62M"
+    },
+    {
+      "symbol": "ABR",
+      "url": "/stocks/abr/",
+      "company_name": "Arbor Realty Trust, Inc.",
+      "market_cap": "REIT - Mortgage",
+      "price": "2.53B"
+    },
+    {
+      "symbol": "ABSI",
+      "url": "/stocks/absi/",
+      "company_name": "Absci Corporation",
+      "market_cap": "Biotechnology",
+      "price": "427.64M"
+    },
+    {
+      "symbol": "ABT",
+      "url": "/stocks/abt/",
+      "company_name": "Abbott Laboratories",
+      "market_cap": "Medical Devices",
+      "price": "226.05B"
+    },
+    {
+      "symbol": "ABTS",
+      "url": "/stocks/abts/",
+      "company_name": "Abits Group Inc.",
+      "market_cap": "Capital Markets",
+      "price": "9.65M"
+    },
+    {
+      "symbol": "ABUS",
+      "url": "/stocks/abus/",
+      "company_name": "Arbutus Biopharma Corporation",
+      "market_cap": "Biotechnology",
+      "price": "655.61M"
+    },
+    {
+      "symbol": "ABVC",
+      "url": "/stocks/abvc/",
+      "company_name": "ABVC BioPharma, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "47.78M"
+    },
+    {
+      "symbol": "ABVE",
+      "url": "/stocks/abve/",
+      "company_name": "Above Food Ingredients Inc.",
+      "market_cap": "Packaged Foods",
+      "price": "93.94M"
+    },
+    {
+      "symbol": "ABVX",
+      "url": "/stocks/abvx/",
+      "company_name": "ABIVAX Société Anonyme",
+      "market_cap": "Biotechnology",
+      "price": "5.27B"
+    },
+    {
+      "symbol": "AC",
+      "url": "/stocks/ac/",
+      "company_name": "Associated Capital Group, Inc.",
+      "market_cap": "Asset Management",
+      "price": "772.03M"
+    },
+    {
+      "symbol": "ACA",
+      "url": "/stocks/aca/",
+      "company_name": "Arcosa, Inc.",
+      "market_cap": "Engineering & Construction",
+      "price": "4.91B"
+    },
+    {
+      "symbol": "ACAD",
+      "url": "/stocks/acad/",
+      "company_name": "ACADIA Pharmaceuticals Inc.",
+      "market_cap": "Biotechnology",
+      "price": "4.28B"
+    },
+    {
+      "symbol": "ACB",
+      "url": "/stocks/acb/",
+      "company_name": "Aurora Cannabis Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "297.53M"
+    },
+    {
+      "symbol": "ACCO",
+      "url": "/stocks/acco/",
+      "company_name": "ACCO Brands Corporation",
+      "market_cap": "Business Equipment & Supplies",
+      "price": "351.07M"
+    },
+    {
+      "symbol": "ACCS",
+      "url": "/stocks/accs/",
+      "company_name": "ACCESS Newswire Inc.",
+      "market_cap": "Advertising Agencies",
+      "price": "43.36M"
+    },
+    {
+      "symbol": "ACDC",
+      "url": "/stocks/acdc/",
+      "company_name": "ProFrac Holding Corp.",
+      "market_cap": "Oil & Gas Equipment & Services",
+      "price": "609.06M"
+    },
+    {
+      "symbol": "ACEL",
+      "url": "/stocks/acel/",
+      "company_name": "Accel Entertainment, Inc.",
+      "market_cap": "Gambling",
+      "price": "958.42M"
+    },
+    {
+      "symbol": "ACET",
+      "url": "/stocks/acet/",
+      "company_name": "Adicet Bio, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "54.86M"
+    },
+    {
+      "symbol": "ACFN",
+      "url": "/stocks/acfn/",
+      "company_name": "Acorn Energy, Inc.",
+      "market_cap": "Scientific & Technical Instruments",
+      "price": "70.29M"
+    },
+    {
+      "symbol": "ACGL",
+      "url": "/stocks/acgl/",
+      "company_name": "Arch Capital Group Ltd.",
+      "market_cap": "Insurance - Diversified",
+      "price": "32.82B"
+    },
+    {
+      "symbol": "ACHC",
+      "url": "/stocks/achc/",
+      "company_name": "Acadia Healthcare Company, Inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "1.89B"
+    },
+    {
+      "symbol": "ACHR",
+      "url": "/stocks/achr/",
+      "company_name": "Archer Aviation Inc.",
+      "market_cap": "Aerospace & Defense",
+      "price": "6.53B"
+    },
+    {
+      "symbol": "ACHV",
+      "url": "/stocks/achv/",
+      "company_name": "Achieve Life Sciences, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "126.18M"
+    },
+    {
+      "symbol": "ACI",
+      "url": "/stocks/aci/",
+      "company_name": "Albertsons Companies, Inc.",
+      "market_cap": "Grocery Stores",
+      "price": "10.55B"
+    },
+    {
+      "symbol": "ACIC",
+      "url": "/stocks/acic/",
+      "company_name": "American Coastal Insurance Corporation",
+      "market_cap": "Insurance - Property & Casualty",
+      "price": "525.20M"
+    },
+    {
+      "symbol": "ACIU",
+      "url": "/stocks/aciu/",
+      "company_name": "AC Immune SA",
+      "market_cap": "Biotechnology",
+      "price": "214.71M"
+    },
+    {
+      "symbol": "ACIW",
+      "url": "/stocks/aciw/",
+      "company_name": "ACI Worldwide, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "4.79B"
+    },
+    {
+      "symbol": "ACLS",
+      "url": "/stocks/acls/",
+      "company_name": "Axcelis Technologies, Inc.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "2.59B"
+    },
+    {
+      "symbol": "ACLX",
+      "url": "/stocks/aclx/",
+      "company_name": "Arcellx, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "3.81B"
+    },
+    {
+      "symbol": "ACM",
+      "url": "/stocks/acm/",
+      "company_name": "AECOM",
+      "market_cap": "Engineering & Construction",
+      "price": "16.00B"
+    },
+    {
+      "symbol": "ACMR",
+      "url": "/stocks/acmr/",
+      "company_name": "ACM Research, Inc.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "1.66B"
+    },
+    {
+      "symbol": "ACN",
+      "url": "/stocks/acn/",
+      "company_name": "Accenture plc",
+      "market_cap": "Information Technology Services",
+      "price": "150.25B"
+    },
+    {
+      "symbol": "ACNB",
+      "url": "/stocks/acnb/",
+      "company_name": "ACNB Corporation",
+      "market_cap": "Banks - Regional",
+      "price": "469.94M"
+    },
+    {
+      "symbol": "ACNT",
+      "url": "/stocks/acnt/",
+      "company_name": "Ascent Industries Co.",
+      "market_cap": "Steel",
+      "price": "120.14M"
+    },
+    {
+      "symbol": "ACOG",
+      "url": "/stocks/acog/",
+      "company_name": "Alpha Cognition Inc.",
+      "market_cap": "Biotechnology",
+      "price": "156.99M"
+    },
+    {
+      "symbol": "ACON",
+      "url": "/stocks/acon/",
+      "company_name": "Aclarion, Inc.",
+      "market_cap": "Health Information Services",
+      "price": "4.24M"
+    },
+    {
+      "symbol": "ACR",
+      "url": "/stocks/acr/",
+      "company_name": "ACRES Commercial Realty Corp.",
+      "market_cap": "REIT - Mortgage",
+      "price": "140.54M"
+    },
+    {
+      "symbol": "ACRE",
+      "url": "/stocks/acre/",
+      "company_name": "Ares Commercial Real Estate Corporation",
+      "market_cap": "REIT - Mortgage",
+      "price": "245.49M"
+    },
+    {
+      "symbol": "ACRS",
+      "url": "/stocks/acrs/",
+      "company_name": "Aclaris Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "180.91M"
+    },
+    {
+      "symbol": "ACRV",
+      "url": "/stocks/acrv/",
+      "company_name": "Acrivon Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "40.13M"
+    },
+    {
+      "symbol": "ACT",
+      "url": "/stocks/act/",
+      "company_name": "Enact Holdings, Inc.",
+      "market_cap": "Insurance - Specialty",
+      "price": "5.61B"
+    },
+    {
+      "symbol": "ACTG",
+      "url": "/stocks/actg/",
+      "company_name": "Acacia Research Corporation",
+      "market_cap": "Business Equipment & Supplies",
+      "price": "325.98M"
+    },
+    {
+      "symbol": "ACTU",
+      "url": "/stocks/actu/",
+      "company_name": "Actuate Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "175.23M"
+    },
+    {
+      "symbol": "ACU",
+      "url": "/stocks/acu/",
+      "company_name": "Acme United Corporation",
+      "market_cap": "Household & Personal Products",
+      "price": "164.89M"
+    },
+    {
+      "symbol": "ACVA",
+      "url": "/stocks/acva/",
+      "company_name": "ACV Auctions Inc.",
+      "market_cap": "Auto & Truck Dealerships",
+      "price": "1.95B"
+    },
+    {
+      "symbol": "ACXP",
+      "url": "/stocks/acxp/",
+      "company_name": "Acurx Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "7.31M"
+    },
+    {
+      "symbol": "AD",
+      "url": "/stocks/ad/",
+      "company_name": "Array Digital Infrastructure, Inc.",
+      "market_cap": "Other",
+      "price": "6.51B"
+    },
+    {
+      "symbol": "ADAG",
+      "url": "/stocks/adag/",
+      "company_name": "Adagene Inc.",
+      "market_cap": "Biotechnology",
+      "price": "99.40M"
+    },
+    {
+      "symbol": "ADAP",
+      "url": "/stocks/adap/",
+      "company_name": "Adaptimmune Therapeutics plc",
+      "market_cap": "Biotechnology",
+      "price": "21.07M"
+    },
+    {
+      "symbol": "ADBE",
+      "url": "/stocks/adbe/",
+      "company_name": "Adobe Inc.",
+      "market_cap": "Software - Application",
+      "price": "144.65B"
+    },
+    {
+      "symbol": "ADC",
+      "url": "/stocks/adc/",
+      "company_name": "Agree Realty Corporation",
+      "market_cap": "REIT - Retail",
+      "price": "8.03B"
+    },
+    {
+      "symbol": "ADCT",
+      "url": "/stocks/adct/",
+      "company_name": "ADC Therapeutics SA",
+      "market_cap": "Biotechnology",
+      "price": "337.75M"
+    },
+    {
+      "symbol": "ADD",
+      "url": "/stocks/add/",
+      "company_name": "Color Star Technology Co., Ltd.",
+      "market_cap": "Entertainment",
+      "price": "4.34M"
+    },
+    {
+      "symbol": "ADEA",
+      "url": "/stocks/adea/",
+      "company_name": "Adeia Inc.",
+      "market_cap": "Software - Application",
+      "price": "1.65B"
+    },
+    {
+      "symbol": "ADGM",
+      "url": "/stocks/adgm/",
+      "company_name": "Adagio Medical Holdings, Inc.",
+      "market_cap": "Medical Devices",
+      "price": "19.69M"
+    },
+    {
+      "symbol": "ADI",
+      "url": "/stocks/adi/",
+      "company_name": "Analog Devices, Inc.",
+      "market_cap": "Semiconductors",
+      "price": "116.95B"
+    },
+    {
+      "symbol": "ADIL",
+      "url": "/stocks/adil/",
+      "company_name": "Adial Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "6.27M"
+    },
+    {
+      "symbol": "ADM",
+      "url": "/stocks/adm/",
+      "company_name": "Archer-Daniels-Midland Company",
+      "market_cap": "Farm Products",
+      "price": "28.01B"
+    },
+    {
+      "symbol": "ADMA",
+      "url": "/stocks/adma/",
+      "company_name": "ADMA Biologics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "4.00B"
+    },
+    {
+      "symbol": "ADN",
+      "url": "/stocks/adn/",
+      "company_name": "Advent Technologies Holdings, Inc.",
+      "market_cap": "Electrical Equipment & Parts",
+      "price": "9.00M"
+    },
+    {
+      "symbol": "ADNT",
+      "url": "/stocks/adnt/",
+      "company_name": "Adient plc",
+      "market_cap": "Auto Parts",
+      "price": "1.92B"
+    },
+    {
+      "symbol": "ADP",
+      "url": "/stocks/adp/",
+      "company_name": "Automatic Data Processing, Inc.",
+      "market_cap": "Software - Application",
+      "price": "122.06B"
+    },
+    {
+      "symbol": "ADPT",
+      "url": "/stocks/adpt/",
+      "company_name": "Adaptive Biotechnologies Corporation",
+      "market_cap": "Biotechnology",
+      "price": "1.97B"
+    },
+    {
+      "symbol": "ADSE",
+      "url": "/stocks/adse/",
+      "company_name": "ADS-TEC Energy PLC",
+      "market_cap": "Electrical Equipment & Parts",
+      "price": "614.96M"
+    },
+    {
+      "symbol": "ADSK",
+      "url": "/stocks/adsk/",
+      "company_name": "Autodesk, Inc.",
+      "market_cap": "Software - Application",
+      "price": "60.33B"
+    },
+    {
+      "symbol": "ADT",
+      "url": "/stocks/adt/",
+      "company_name": "ADT Inc.",
+      "market_cap": "Security & Protection Services",
+      "price": "7.05B"
+    },
+    {
+      "symbol": "ADTN",
+      "url": "/stocks/adtn/",
+      "company_name": "ADTRAN Holdings, Inc.",
+      "market_cap": "Communication Equipment",
+      "price": "738.86M"
+    },
+    {
+      "symbol": "ADTX",
+      "url": "/stocks/adtx/",
+      "company_name": "Aditxt, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "5.01M"
+    },
+    {
+      "symbol": "ADUR",
+      "url": "/stocks/adur/",
+      "company_name": "Aduro Clean Technologies Inc.",
+      "market_cap": "Pollution & Treatment Controls",
+      "price": "357.63M"
+    },
+    {
+      "symbol": "ADUS",
+      "url": "/stocks/adus/",
+      "company_name": "Addus HomeCare Corporation",
+      "market_cap": "Medical Care Facilities",
+      "price": "2.07B"
+    },
+    {
+      "symbol": "ADV",
+      "url": "/stocks/adv/",
+      "company_name": "Advantage Solutions Inc.",
+      "market_cap": "Advertising Agencies",
+      "price": "619.30M"
+    },
+    {
+      "symbol": "ADVB",
+      "url": "/stocks/advb/",
+      "company_name": "Advanced Biomed Inc.",
+      "market_cap": "Diagnostics & Research",
+      "price": "8.69M"
+    },
+    {
+      "symbol": "ADVM",
+      "url": "/stocks/advm/",
+      "company_name": "Adverum Biotechnologies, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "52.85M"
+    },
+    {
+      "symbol": "ADXN",
+      "url": "/stocks/adxn/",
+      "company_name": "Addex Therapeutics Ltd",
+      "market_cap": "Biotechnology",
+      "price": "6.94M"
+    },
+    {
+      "symbol": "AEBI",
+      "url": "/stocks/aebi/",
+      "company_name": "Aebi Schmidt Holding AG",
+      "market_cap": "Farm & Heavy Construction Machinery",
+      "price": "896.27M"
+    },
+    {
+      "symbol": "AEE",
+      "url": "/stocks/aee/",
+      "company_name": "Ameren Corporation",
+      "market_cap": "Utilities - Regulated Electric",
+      "price": "27.42B"
+    },
+    {
+      "symbol": "AEG",
+      "url": "/stocks/aeg/",
+      "company_name": "Aegon Ltd.",
+      "market_cap": "Insurance - Diversified",
+      "price": "11.74B"
+    },
+    {
+      "symbol": "AEHL",
+      "url": "/stocks/aehl/",
+      "company_name": "Antelope Enterprise Holdings Limited",
+      "market_cap": "Building Products & Equipment",
+      "price": "2.73M"
+    },
+    {
+      "symbol": "AEHR",
+      "url": "/stocks/aehr/",
+      "company_name": "Aehr Test Systems, Inc.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "610.87M"
+    },
+    {
+      "symbol": "AEI",
+      "url": "/stocks/aei/",
+      "company_name": "Alset Inc.",
+      "market_cap": "Real Estate - Development",
+      "price": "45.98M"
+    },
+    {
+      "symbol": "AEIS",
+      "url": "/stocks/aeis/",
+      "company_name": "Advanced Energy Industries, Inc.",
+      "market_cap": "Electrical Equipment & Parts",
+      "price": "6.06B"
+    },
+    {
+      "symbol": "AEM",
+      "url": "/stocks/aem/",
+      "company_name": "Agnico Eagle Mines Limited",
+      "market_cap": "Gold",
+      "price": "67.84B"
+    },
+    {
+      "symbol": "AEMD",
+      "url": "/stocks/aemd/",
+      "company_name": "Aethlon Medical, Inc.",
+      "market_cap": "Medical Devices",
+      "price": "2.45M"
+    },
+    {
+      "symbol": "AENT",
+      "url": "/stocks/aent/",
+      "company_name": "Alliance Entertainment Holding Corporation",
+      "market_cap": "Entertainment",
+      "price": "248.16M"
+    },
+    {
+      "symbol": "AEO",
+      "url": "/stocks/aeo/",
+      "company_name": "American Eagle Outfitters, Inc.",
+      "market_cap": "Apparel Retail",
+      "price": "2.19B"
+    },
+    {
+      "symbol": "AEON",
+      "url": "/stocks/aeon/",
+      "company_name": "AEON Biopharma, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "7.56M"
+    },
+    {
+      "symbol": "AEP",
+      "url": "/stocks/aep/",
+      "company_name": "American Electric Power Company, Inc.",
+      "market_cap": "Utilities - Regulated Electric",
+      "price": "60.16B"
+    },
+    {
+      "symbol": "AER",
+      "url": "/stocks/aer/",
+      "company_name": "AerCap Holdings N.V.",
+      "market_cap": "Rental & Leasing Services",
+      "price": "19.85B"
+    },
+    {
+      "symbol": "AERT",
+      "url": "/stocks/aert/",
+      "company_name": "Aeries Technology, Inc",
+      "market_cap": "Consulting Services",
+      "price": "32.11M"
+    },
+    {
+      "symbol": "AES",
+      "url": "/stocks/aes/",
+      "company_name": "The AES Corporation",
+      "market_cap": "Utilities - Diversified",
+      "price": "9.41B"
+    },
+    {
+      "symbol": "AESI",
+      "url": "/stocks/aesi/",
+      "company_name": "Atlas Energy Solutions Inc.",
+      "market_cap": "Oil & Gas Equipment & Services",
+      "price": "1.47B"
+    },
+    {
+      "symbol": "AEVA",
+      "url": "/stocks/aeva/",
+      "company_name": "Aeva Technologies, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "779.58M"
+    },
+    {
+      "symbol": "AEYE",
+      "url": "/stocks/aeye/",
+      "company_name": "AudioEye, Inc.",
+      "market_cap": "Software - Application",
+      "price": "134.75M"
+    },
+    {
+      "symbol": "AFBI",
+      "url": "/stocks/afbi/",
+      "company_name": "Affinity Bancshares, Inc.",
+      "market_cap": "Banks - Regional",
+      "price": "119.30M"
+    },
+    {
+      "symbol": "AFCG",
+      "url": "/stocks/afcg/",
+      "company_name": "Advanced Flower Capital Inc.",
+      "market_cap": "REIT - Mortgage",
+      "price": "105.75M"
+    },
+    {
+      "symbol": "AFG",
+      "url": "/stocks/afg/",
+      "company_name": "American Financial Group, Inc.",
+      "market_cap": "Insurance - Property & Casualty",
+      "price": "10.92B"
+    },
+    {
+      "symbol": "AFJK",
+      "url": "/stocks/afjk/",
+      "company_name": "Aimei Health Technology Co., Ltd",
+      "market_cap": "Shell Companies",
+      "price": "68.62M"
+    },
+    {
+      "symbol": "AFL",
+      "url": "/stocks/afl/",
+      "company_name": "Aflac Incorporated",
+      "market_cap": "Insurance - Life",
+      "price": "56.06B"
+    },
+    {
+      "symbol": "AFRI",
+      "url": "/stocks/afri/",
+      "company_name": "Forafric Global PLC",
+      "market_cap": "Farm Products",
+      "price": "210.24M"
+    },
+    {
+      "symbol": "AFRM",
+      "url": "/stocks/afrm/",
+      "company_name": "Affirm Holdings, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "25.24B"
+    },
+    {
+      "symbol": "AFYA",
+      "url": "/stocks/afya/",
+      "company_name": "Afya Limited",
+      "market_cap": "Education & Training Services",
+      "price": "1.33B"
+    },
+    {
+      "symbol": "AG",
+      "url": "/stocks/ag/",
+      "company_name": "First Majestic Silver Corp.",
+      "market_cap": "Silver",
+      "price": "4.34B"
+    },
+    {
+      "symbol": "AGAE",
+      "url": "/stocks/agae/",
+      "company_name": "Allied Gaming & Entertainment Inc.",
+      "market_cap": "Entertainment",
+      "price": "60.07M"
+    },
+    {
+      "symbol": "AGCO",
+      "url": "/stocks/agco/",
+      "company_name": "AGCO Corporation",
+      "market_cap": "Farm & Heavy Construction Machinery",
+      "price": "8.28B"
+    },
+    {
+      "symbol": "AGEN",
+      "url": "/stocks/agen/",
+      "company_name": "Agenus Inc.",
+      "market_cap": "Biotechnology",
+      "price": "146.89M"
+    },
+    {
+      "symbol": "AGFY",
+      "url": "/stocks/agfy/",
+      "company_name": "Agrify Corporation",
+      "market_cap": "Farm & Heavy Construction Machinery",
+      "price": "69.99M"
+    },
+    {
+      "symbol": "AGH",
+      "url": "/stocks/agh/",
+      "company_name": "Aureus Greenway Holdings Inc.",
+      "market_cap": "Leisure",
+      "price": "64.54M"
+    },
+    {
+      "symbol": "AGI",
+      "url": "/stocks/agi/",
+      "company_name": "Alamos Gold Inc.",
+      "market_cap": "Gold",
+      "price": "10.97B"
+    },
+    {
+      "symbol": "AGIO",
+      "url": "/stocks/agio/",
+      "company_name": "Agios Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "2.06B"
+    },
+    {
+      "symbol": "AGL",
+      "url": "/stocks/agl/",
+      "company_name": "agilon health, inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "401.95M"
+    },
+    {
+      "symbol": "AGM",
+      "url": "/stocks/agm/",
+      "company_name": "Federal Agricultural Mortgage Corporation",
+      "market_cap": "Credit Services",
+      "price": "2.01B"
+    },
+    {
+      "symbol": "AGM.A",
+      "url": "/stocks/agm.a/",
+      "company_name": "Federal Agricultural Mortgage Corporation",
+      "market_cap": "Credit Services",
+      "price": "1.95B"
+    },
+    {
+      "symbol": "AGMH",
+      "url": "/stocks/agmh/",
+      "company_name": "AGM Group Holdings Inc.",
+      "market_cap": "Computer Hardware",
+      "price": "4.36M"
+    },
+    {
+      "symbol": "AGNC",
+      "url": "/stocks/agnc/",
+      "company_name": "AGNC Investment Corp.",
+      "market_cap": "REIT - Mortgage",
+      "price": "9.94B"
+    },
+    {
+      "symbol": "AGNCM",
+      "url": "/stocks/agncm/",
+      "company_name": "AGNC Investment Corp.",
+      "market_cap": "REIT - Mortgage",
+      "price": "9.85B"
+    },
+    {
+      "symbol": "AGO",
+      "url": "/stocks/ago/",
+      "company_name": "Assured Guaranty Ltd.",
+      "market_cap": "Insurance - Specialty",
+      "price": "3.91B"
+    },
+    {
+      "symbol": "AGRI",
+      "url": "/stocks/agri/",
+      "company_name": "AgriFORCE Growing Systems Ltd.",
+      "market_cap": "Farm Products",
+      "price": "5.35M"
+    },
+    {
+      "symbol": "AGRO",
+      "url": "/stocks/agro/",
+      "company_name": "Adecoagro S.A.",
+      "market_cap": "Farm Products",
+      "price": "910.94M"
+    },
+    {
+      "symbol": "AGX",
+      "url": "/stocks/agx/",
+      "company_name": "Argan, Inc.",
+      "market_cap": "Engineering & Construction",
+      "price": "3.26B"
+    },
+    {
+      "symbol": "AGYS",
+      "url": "/stocks/agys/",
+      "company_name": "Agilysys, Inc.",
+      "market_cap": "Software - Application",
+      "price": "3.05B"
+    },
+    {
+      "symbol": "AHCO",
+      "url": "/stocks/ahco/",
+      "company_name": "AdaptHealth Corp.",
+      "market_cap": "Medical Devices",
+      "price": "1.30B"
+    },
+    {
+      "symbol": "AHG",
+      "url": "/stocks/ahg/",
+      "company_name": "Akso Health Group",
+      "market_cap": "Medical Distribution",
+      "price": "655.81M"
+    },
+    {
+      "symbol": "AHH",
+      "url": "/stocks/ahh/",
+      "company_name": "Armada Hoffler Properties, Inc.",
+      "market_cap": "REIT - Diversified",
+      "price": "746.38M"
+    },
+    {
+      "symbol": "AHL",
+      "url": "/stocks/ahl/",
+      "company_name": "Aspen Insurance Holdings Limited",
+      "market_cap": "Insurance - Property & Casualty",
+      "price": "2.64B"
+    },
+    {
+      "symbol": "AHR",
+      "url": "/stocks/ahr/",
+      "company_name": "American Healthcare REIT, Inc.",
+      "market_cap": "REIT - Healthcare Facilities",
+      "price": "6.93B"
+    },
+    {
+      "symbol": "AHT",
+      "url": "/stocks/aht/",
+      "company_name": "Ashford Hospitality Trust, Inc.",
+      "market_cap": "REIT - Hotel & Motel",
+      "price": "38.95M"
+    },
+    {
+      "symbol": "AI",
+      "url": "/stocks/ai/",
+      "company_name": "C3.ai, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "2.32B"
+    },
+    {
+      "symbol": "AIFF",
+      "url": "/stocks/aiff/",
+      "company_name": "Firefly Neuroscience, Inc.",
+      "market_cap": "Software - Application",
+      "price": "37.00M"
+    },
+    {
+      "symbol": "AIFU",
+      "url": "/stocks/aifu/",
+      "company_name": "AIFU Inc.",
+      "market_cap": "Insurance Brokers",
+      "price": "32.10M"
+    },
+    {
+      "symbol": "AIG",
+      "url": "/stocks/aig/",
+      "company_name": "American International Group, Inc.",
+      "market_cap": "Insurance - Diversified",
+      "price": "43.71B"
+    },
+    {
+      "symbol": "AIHS",
+      "url": "/stocks/aihs/",
+      "company_name": "Senmiao Technology Limited",
+      "market_cap": "Rental & Leasing Services",
+      "price": "2.45M"
+    },
+    {
+      "symbol": "AII",
+      "url": "/stocks/aii/",
+      "company_name": "American Integrity Insurance Group, Inc.",
+      "market_cap": "Insurance - Property & Casualty",
+      "price": "357.97M"
+    },
+    {
+      "symbol": "AIMD",
+      "url": "/stocks/aimd/",
+      "company_name": "Ainos, Inc.",
+      "market_cap": "Medical Devices",
+      "price": "14.08M"
+    },
+    {
+      "symbol": "AIN",
+      "url": "/stocks/ain/",
+      "company_name": "Albany International Corp.",
+      "market_cap": "Textile Manufacturing",
+      "price": "1.88B"
+    },
+    {
+      "symbol": "AIOT",
+      "url": "/stocks/aiot/",
+      "company_name": "PowerFleet, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "619.54M"
+    },
+    {
+      "symbol": "AIP",
+      "url": "/stocks/aip/",
+      "company_name": "Arteris, Inc.",
+      "market_cap": "Semiconductors",
+      "price": "428.84M"
+    },
+    {
+      "symbol": "AIR",
+      "url": "/stocks/air/",
+      "company_name": "AAR Corp.",
+      "market_cap": "Aerospace & Defense",
+      "price": "2.77B"
+    },
+    {
+      "symbol": "AIRE",
+      "url": "/stocks/aire/",
+      "company_name": "reAlpha Tech Corp.",
+      "market_cap": "Real Estate Services",
+      "price": "28.41M"
+    },
+    {
+      "symbol": "AIRG",
+      "url": "/stocks/airg/",
+      "company_name": "Airgain, Inc.",
+      "market_cap": "Communication Equipment",
+      "price": "54.40M"
+    },
+    {
+      "symbol": "AIRI",
+      "url": "/stocks/airi/",
+      "company_name": "Air Industries Group",
+      "market_cap": "Aerospace & Defense",
+      "price": "12.72M"
+    },
+    {
+      "symbol": "AIRJ",
+      "url": "/stocks/airj/",
+      "company_name": "AirJoule Technologies Corporation",
+      "market_cap": "Building Products & Equipment",
+      "price": "281.30M"
+    },
+    {
+      "symbol": "AIRO",
+      "url": "/stocks/airo/",
+      "company_name": "AIRO Group Holdings, Inc.",
+      "market_cap": "Aerospace & Defense",
+      "price": "541.68M"
+    },
+    {
+      "symbol": "AIRS",
+      "url": "/stocks/airs/",
+      "company_name": "AirSculpt Technologies, Inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "418.33M"
+    },
+    {
+      "symbol": "AIRT",
+      "url": "/stocks/airt/",
+      "company_name": "Air T, Inc.",
+      "market_cap": "Conglomerates",
+      "price": "58.13M"
+    },
+    {
+      "symbol": "AISP",
+      "url": "/stocks/aisp/",
+      "company_name": "Airship AI Holdings, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "159.55M"
+    },
+    {
+      "symbol": "AIT",
+      "url": "/stocks/ait/",
+      "company_name": "Applied Industrial Technologies, Inc.",
+      "market_cap": "Industrial Distribution",
+      "price": "10.36B"
+    },
+    {
+      "symbol": "AIV",
+      "url": "/stocks/aiv/",
+      "company_name": "Apartment Investment and Management Company",
+      "market_cap": "REIT - Residential",
+      "price": "1.17B"
+    },
+    {
+      "symbol": "AIXI",
+      "url": "/stocks/aixi/",
+      "company_name": "Xiao-I Corporation",
+      "market_cap": "Software - Application",
+      "price": "20.88M"
+    },
+    {
+      "symbol": "AIZ",
+      "url": "/stocks/aiz/",
+      "company_name": "Assurant, Inc.",
+      "market_cap": "Insurance - Property & Casualty",
+      "price": "10.58B"
+    },
+    {
+      "symbol": "AJG",
+      "url": "/stocks/ajg/",
+      "company_name": "Arthur J. Gallagher & Co.",
+      "market_cap": "Insurance Brokers",
+      "price": "75.05B"
+    },
+    {
+      "symbol": "AKA",
+      "url": "/stocks/aka/",
+      "company_name": "a.k.a. Brands Holding Corp.",
+      "market_cap": "Apparel Retail",
+      "price": "122.97M"
+    },
+    {
+      "symbol": "AKAM",
+      "url": "/stocks/akam/",
+      "company_name": "Akamai Technologies, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "10.57B"
+    },
+    {
+      "symbol": "AKAN",
+      "url": "/stocks/akan/",
+      "company_name": "Akanda Corp.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "3.03M"
+    },
+    {
+      "symbol": "AKBA",
+      "url": "/stocks/akba/",
+      "company_name": "Akebia Therapeutics, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "881.61M"
+    },
+    {
+      "symbol": "AKO.A",
+      "url": "/stocks/ako.a/",
+      "company_name": "Embotelladora Andina S.A.",
+      "market_cap": "Beverages - Non-Alcoholic",
+      "price": "3.36B"
+    },
+    {
+      "symbol": "AKO.B",
+      "url": "/stocks/ako.b/",
+      "company_name": "Embotelladora Andina S.A.",
+      "market_cap": "Beverages - Non-Alcoholic",
+      "price": "3.36B"
+    },
+    {
+      "symbol": "AKR",
+      "url": "/stocks/akr/",
+      "company_name": "Acadia Realty Trust",
+      "market_cap": "REIT - Retail",
+      "price": "2.59B"
+    },
+    {
+      "symbol": "AKRO",
+      "url": "/stocks/akro/",
+      "company_name": "Akero Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "3.89B"
+    },
+    {
+      "symbol": "AKTX",
+      "url": "/stocks/aktx/",
+      "company_name": "Akari Therapeutics, Plc",
+      "market_cap": "Biotechnology",
+      "price": "33.59M"
+    },
+    {
+      "symbol": "AL",
+      "url": "/stocks/al/",
+      "company_name": "Air Lease Corporation",
+      "market_cap": "Rental & Leasing Services",
+      "price": "6.50B"
+    },
+    {
+      "symbol": "ALAB",
+      "url": "/stocks/alab/",
+      "company_name": "Astera Labs, Inc.",
+      "market_cap": "Semiconductors",
+      "price": "32.78B"
+    },
+    {
+      "symbol": "ALAR",
+      "url": "/stocks/alar/",
+      "company_name": "Alarum Technologies Ltd.",
+      "market_cap": "Software - Infrastructure",
+      "price": "107.38M"
+    },
+    {
+      "symbol": "ALB",
+      "url": "/stocks/alb/",
+      "company_name": "Albemarle Corporation",
+      "market_cap": "Specialty Chemicals",
+      "price": "9.47B"
+    },
+    {
+      "symbol": "ALBT",
+      "url": "/stocks/albt/",
+      "company_name": "Avalon GloboCare Corp.",
+      "market_cap": "Real Estate Services",
+      "price": "8.22M"
+    },
+    {
+      "symbol": "ALC",
+      "url": "/stocks/alc/",
+      "company_name": "Alcon Inc.",
+      "market_cap": "Medical Instruments & Supplies",
+      "price": "42.47B"
+    },
+    {
+      "symbol": "ALCO",
+      "url": "/stocks/alco/",
+      "company_name": "Alico, Inc.",
+      "market_cap": "Farm Products",
+      "price": "244.24M"
+    },
+    {
+      "symbol": "ALCY",
+      "url": "/stocks/alcy/",
+      "company_name": "Alchemy Investments Acquisition Corp 1",
+      "market_cap": "Shell Companies",
+      "price": "52.98M"
+    },
+    {
+      "symbol": "ALDF",
+      "url": "/stocks/aldf/",
+      "company_name": "Aldel Financial II Inc.",
+      "market_cap": "Shell Companies",
+      "price": "375.06M"
+    },
+    {
+      "symbol": "ALDX",
+      "url": "/stocks/aldx/",
+      "company_name": "Aldeyra Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "323.44M"
+    },
+    {
+      "symbol": "ALE",
+      "url": "/stocks/ale/",
+      "company_name": "ALLETE, Inc.",
+      "market_cap": "Utilities - Diversified",
+      "price": "3.82B"
+    },
+    {
+      "symbol": "ALEC",
+      "url": "/stocks/alec/",
+      "company_name": "Alector, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "212.55M"
+    },
+    {
+      "symbol": "ALEX",
+      "url": "/stocks/alex/",
+      "company_name": "Alexander & Baldwin, Inc.",
+      "market_cap": "REIT - Retail",
+      "price": "1.35B"
+    },
+    {
+      "symbol": "ALF",
+      "url": "/stocks/alf/",
+      "company_name": "Centurion Acquisition Corp.",
+      "market_cap": "Shell Companies",
+      "price": "375.55M"
+    },
+    {
+      "symbol": "ALG",
+      "url": "/stocks/alg/",
+      "company_name": "Alamo Group Inc.",
+      "market_cap": "Farm & Heavy Construction Machinery",
+      "price": "2.77B"
+    },
+    {
+      "symbol": "ALGM",
+      "url": "/stocks/algm/",
+      "company_name": "Allegro MicroSystems, Inc.",
+      "market_cap": "Semiconductors",
+      "price": "5.97B"
+    },
+    {
+      "symbol": "ALGN",
+      "url": "/stocks/algn/",
+      "company_name": "Align Technology, Inc.",
+      "market_cap": "Medical Instruments & Supplies",
+      "price": "10.47B"
+    },
+    {
+      "symbol": "ALGS",
+      "url": "/stocks/algs/",
+      "company_name": "Aligos Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "46.75M"
+    },
+    {
+      "symbol": "ALGT",
+      "url": "/stocks/algt/",
+      "company_name": "Allegiant Travel Company",
+      "market_cap": "Airlines",
+      "price": "1.03B"
+    },
+    {
+      "symbol": "ALHC",
+      "url": "/stocks/alhc/",
+      "company_name": "Alignment Healthcare, Inc.",
+      "market_cap": "Healthcare Plans",
+      "price": "2.93B"
+    },
+    {
+      "symbol": "ALIT",
+      "url": "/stocks/alit/",
+      "company_name": "Alight, Inc.",
+      "market_cap": "Software - Application",
+      "price": "2.07B"
+    },
+    {
+      "symbol": "ALK",
+      "url": "/stocks/alk/",
+      "company_name": "Alaska Air Group, Inc.",
+      "market_cap": "Airlines",
+      "price": "6.45B"
+    },
+    {
+      "symbol": "ALKS",
+      "url": "/stocks/alks/",
+      "company_name": "Alkermes plc",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "4.60B"
+    },
+    {
+      "symbol": "ALKT",
+      "url": "/stocks/alkt/",
+      "company_name": "Alkami Technology, Inc.",
+      "market_cap": "Software - Application",
+      "price": "2.29B"
+    },
+    {
+      "symbol": "ALL",
+      "url": "/stocks/all/",
+      "company_name": "The Allstate Corporation",
+      "market_cap": "Insurance - Property & Casualty",
+      "price": "54.92B"
+    },
+    {
+      "symbol": "ALLE",
+      "url": "/stocks/alle/",
+      "company_name": "Allegion plc",
+      "market_cap": "Security & Protection Services",
+      "price": "14.37B"
+    },
+    {
+      "symbol": "ALLO",
+      "url": "/stocks/allo/",
+      "company_name": "Allogene Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "229.67M"
+    },
+    {
+      "symbol": "ALLR",
+      "url": "/stocks/allr/",
+      "company_name": "Allarity Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "14.47M"
+    },
+    {
+      "symbol": "ALLT",
+      "url": "/stocks/allt/",
+      "company_name": "Allot Ltd.",
+      "market_cap": "Software - Infrastructure",
+      "price": "361.50M"
+    },
+    {
+      "symbol": "ALLY",
+      "url": "/stocks/ally/",
+      "company_name": "Ally Financial Inc.",
+      "market_cap": "Credit Services",
+      "price": "11.89B"
+    },
+    {
+      "symbol": "ALM",
+      "url": "/stocks/alm/",
+      "company_name": "Almonty Industries Inc.",
+      "market_cap": "Other Industrial Metals & Mining",
+      "price": "994.28M"
+    },
+    {
+      "symbol": "ALMS",
+      "url": "/stocks/alms/",
+      "company_name": "Alumis Inc.",
+      "market_cap": "Biotechnology",
+      "price": "454.55M"
+    },
+    {
+      "symbol": "ALMU",
+      "url": "/stocks/almu/",
+      "company_name": "Aeluma, Inc.",
+      "market_cap": "Semiconductors",
+      "price": "333.51M"
+    },
+    {
+      "symbol": "ALNT",
+      "url": "/stocks/alnt/",
+      "company_name": "Allient Inc.",
+      "market_cap": "Electronic Components",
+      "price": "788.03M"
+    },
+    {
+      "symbol": "ALNY",
+      "url": "/stocks/alny/",
+      "company_name": "Alnylam Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "56.29B"
+    },
+    {
+      "symbol": "ALOT",
+      "url": "/stocks/alot/",
+      "company_name": "AstroNova, Inc.",
+      "market_cap": "Computer Hardware",
+      "price": "88.50M"
+    },
+    {
+      "symbol": "ALRM",
+      "url": "/stocks/alrm/",
+      "company_name": "Alarm.com Holdings, Inc.",
+      "market_cap": "Software - Application",
+      "price": "2.75B"
+    },
+    {
+      "symbol": "ALRS",
+      "url": "/stocks/alrs/",
+      "company_name": "Alerus Financial Corporation",
+      "market_cap": "Banks - Regional",
+      "price": "551.10M"
+    },
+    {
+      "symbol": "ALSN",
+      "url": "/stocks/alsn/",
+      "company_name": "Allison Transmission Holdings, Inc.",
+      "market_cap": "Auto Parts",
+      "price": "7.61B"
+    },
+    {
+      "symbol": "ALT",
+      "url": "/stocks/alt/",
+      "company_name": "Altimmune, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "295.63M"
+    },
+    {
+      "symbol": "ALTG",
+      "url": "/stocks/altg/",
+      "company_name": "Alta Equipment Group Inc.",
+      "market_cap": "Rental & Leasing Services",
+      "price": "255.74M"
+    },
+    {
+      "symbol": "ALTI",
+      "url": "/stocks/alti/",
+      "company_name": "AlTi Global, Inc.",
+      "market_cap": "Asset Management",
+      "price": "651.14M"
+    },
+    {
+      "symbol": "ALTO",
+      "url": "/stocks/alto/",
+      "company_name": "Alto Ingredients, Inc.",
+      "market_cap": "Specialty Chemicals",
+      "price": "79.33M"
+    },
+    {
+      "symbol": "ALTS",
+      "url": "/stocks/alts/",
+      "company_name": "ALT5 Sigma Corporation",
+      "market_cap": "Software - Application",
+      "price": "138.30M"
+    },
+    {
+      "symbol": "ALUR",
+      "url": "/stocks/alur/",
+      "company_name": "Allurion Technologies Inc.",
+      "market_cap": "Medical Devices",
+      "price": "17.62M"
+    },
+    {
+      "symbol": "ALV",
+      "url": "/stocks/alv/",
+      "company_name": "Autoliv, Inc.",
+      "market_cap": "Auto Parts",
+      "price": "8.94B"
+    },
+    {
+      "symbol": "ALVO",
+      "url": "/stocks/alvo/",
+      "company_name": "Alvotech",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "2.76B"
+    },
+    {
+      "symbol": "ALX",
+      "url": "/stocks/alx/",
+      "company_name": "Alexander's, Inc.",
+      "market_cap": "REIT - Retail",
+      "price": "1.14B"
+    },
+    {
+      "symbol": "ALXO",
+      "url": "/stocks/alxo/",
+      "company_name": "ALX Oncology Holdings Inc.",
+      "market_cap": "Biotechnology",
+      "price": "33.34M"
+    },
+    {
+      "symbol": "ALZN",
+      "url": "/stocks/alzn/",
+      "company_name": "Alzamend Neuro, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "7.77M"
+    },
+    {
+      "symbol": "AM",
+      "url": "/stocks/am/",
+      "company_name": "Antero Midstream Corporation",
+      "market_cap": "Oil & Gas Midstream",
+      "price": "8.77B"
+    },
+    {
+      "symbol": "AMAL",
+      "url": "/stocks/amal/",
+      "company_name": "Amalgamated Financial Corp.",
+      "market_cap": "Banks - Regional",
+      "price": "882.50M"
+    },
+    {
+      "symbol": "AMAT",
+      "url": "/stocks/amat/",
+      "company_name": "Applied Materials, Inc.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "153.30B"
+    },
+    {
+      "symbol": "AMBA",
+      "url": "/stocks/amba/",
+      "company_name": "Ambarella, Inc.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "2.96B"
+    },
+    {
+      "symbol": "AMBC",
+      "url": "/stocks/ambc/",
+      "company_name": "Ambac Financial Group, Inc.",
+      "market_cap": "Insurance - Specialty",
+      "price": "372.61M"
+    },
+    {
+      "symbol": "AMBI",
+      "url": "/stocks/ambi/",
+      "company_name": "Ambipar Emergency Response",
+      "market_cap": "Waste Management",
+      "price": "290.45M"
+    },
+    {
+      "symbol": "AMBO",
+      "url": "/stocks/ambo/",
+      "company_name": "Ambow Education Holding Ltd.",
+      "market_cap": "Education & Training Services",
+      "price": "7.94M"
+    },
+    {
+      "symbol": "AMBP",
+      "url": "/stocks/ambp/",
+      "company_name": "Ardagh Metal Packaging S.A.",
+      "market_cap": "Packaging & Containers",
+      "price": "2.39B"
+    },
+    {
+      "symbol": "AMBQ",
+      "url": "/stocks/ambq/",
+      "company_name": "Ambiq Micro, Inc.",
+      "market_cap": "Semiconductors",
+      "price": "723.08M"
+    },
+    {
+      "symbol": "AMBR",
+      "url": "/stocks/ambr/",
+      "company_name": "Amber International Holding Limited",
+      "market_cap": "Software - Infrastructure",
+      "price": "635.17M"
+    },
+    {
+      "symbol": "AMC",
+      "url": "/stocks/amc/",
+      "company_name": "AMC Entertainment Holdings, Inc.",
+      "market_cap": "Entertainment",
+      "price": "1.57B"
+    },
+    {
+      "symbol": "AMCR",
+      "url": "/stocks/amcr/",
+      "company_name": "Amcor plc",
+      "market_cap": "Packaging & Containers",
+      "price": "22.61B"
+    },
+    {
+      "symbol": "AMCX",
+      "url": "/stocks/amcx/",
+      "company_name": "AMC Networks Inc.",
+      "market_cap": "Entertainment",
+      "price": "307.59M"
+    },
+    {
+      "symbol": "AMD",
+      "url": "/stocks/amd/",
+      "company_name": "Advanced Micro Devices, Inc.",
+      "market_cap": "Semiconductors",
+      "price": "299.64B"
+    },
+    {
+      "symbol": "AME",
+      "url": "/stocks/ame/",
+      "company_name": "AMETEK, Inc.",
+      "market_cap": "Specialty Industrial Machinery",
+      "price": "42.73B"
+    },
+    {
+      "symbol": "AMED",
+      "url": "/stocks/amed/",
+      "company_name": "Amedisys, Inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "3.32B"
+    },
+    {
+      "symbol": "AMG",
+      "url": "/stocks/amg/",
+      "company_name": "Affiliated Managers Group, Inc.",
+      "market_cap": "Asset Management",
+      "price": "6.30B"
+    },
+    {
+      "symbol": "AMGN",
+      "url": "/stocks/amgn/",
+      "company_name": "Amgen Inc.",
+      "market_cap": "Drug Manufacturers - General",
+      "price": "154.38B"
+    },
+    {
+      "symbol": "AMH",
+      "url": "/stocks/amh/",
+      "company_name": "American Homes 4 Rent",
+      "market_cap": "REIT - Residential",
+      "price": "14.52B"
+    },
+    {
+      "symbol": "AMIX",
+      "url": "/stocks/amix/",
+      "company_name": "Autonomix Medical, Inc.",
+      "market_cap": "Medical Devices",
+      "price": "3.23M"
+    },
+    {
+      "symbol": "AMKR",
+      "url": "/stocks/amkr/",
+      "company_name": "Amkor Technology, Inc.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "6.07B"
+    },
+    {
+      "symbol": "AMLX",
+      "url": "/stocks/amlx/",
+      "company_name": "Amylyx Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "732.06M"
+    },
+    {
+      "symbol": "AMN",
+      "url": "/stocks/amn/",
+      "company_name": "AMN Healthcare Services, Inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "682.55M"
+    },
+    {
+      "symbol": "AMOD",
+      "url": "/stocks/amod/",
+      "company_name": "Alpha Modus Holdings, Inc.",
+      "market_cap": "Software - Application",
+      "price": "44.47M"
+    },
+    {
+      "symbol": "AMP",
+      "url": "/stocks/amp/",
+      "company_name": "Ameriprise Financial, Inc.",
+      "market_cap": "Asset Management",
+      "price": "48.83B"
+    },
+    {
+      "symbol": "AMPG",
+      "url": "/stocks/ampg/",
+      "company_name": "AmpliTech Group, Inc.",
+      "market_cap": "Communication Equipment",
+      "price": "79.36M"
+    },
+    {
+      "symbol": "AMPH",
+      "url": "/stocks/amph/",
+      "company_name": "Amphastar Pharmaceuticals, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "1.42B"
+    },
+    {
+      "symbol": "AMPL",
+      "url": "/stocks/ampl/",
+      "company_name": "Amplitude, Inc.",
+      "market_cap": "Software - Application",
+      "price": "1.48B"
+    },
+    {
+      "symbol": "AMPX",
+      "url": "/stocks/ampx/",
+      "company_name": "Amprius Technologies, Inc.",
+      "market_cap": "Electrical Equipment & Parts",
+      "price": "956.83M"
+    },
+    {
+      "symbol": "AMPY",
+      "url": "/stocks/ampy/",
+      "company_name": "Amplify Energy Corp.",
+      "market_cap": "Oil & Gas Exploration & Production",
+      "price": "157.62M"
+    },
+    {
+      "symbol": "AMR",
+      "url": "/stocks/amr/",
+      "company_name": "Alpha Metallurgical Resources, Inc.",
+      "market_cap": "Coking Coal",
+      "price": "2.11B"
+    },
+    {
+      "symbol": "AMRC",
+      "url": "/stocks/amrc/",
+      "company_name": "Ameresco, Inc.",
+      "market_cap": "Engineering & Construction",
+      "price": "1.07B"
+    },
+    {
+      "symbol": "AMRK",
+      "url": "/stocks/amrk/",
+      "company_name": "A-Mark Precious Metals, Inc.",
+      "market_cap": "Capital Markets",
+      "price": "565.14M"
+    },
+    {
+      "symbol": "AMRN",
+      "url": "/stocks/amrn/",
+      "company_name": "Amarin Corporation plc",
+      "market_cap": "Drug Manufacturers - General",
+      "price": "310.24M"
+    },
+    {
+      "symbol": "AMRX",
+      "url": "/stocks/amrx/",
+      "company_name": "Amneal Pharmaceuticals, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "2.85B"
+    },
+    {
+      "symbol": "AMS",
+      "url": "/stocks/ams/",
+      "company_name": "American Shared Hospital Services",
+      "market_cap": "Medical Care Facilities",
+      "price": "17.54M"
+    },
+    {
+      "symbol": "AMSC",
+      "url": "/stocks/amsc/",
+      "company_name": "American Superconductor Corporation",
+      "market_cap": "Specialty Industrial Machinery",
+      "price": "2.56B"
+    },
+    {
+      "symbol": "AMSF",
+      "url": "/stocks/amsf/",
+      "company_name": "AMERISAFE, Inc.",
+      "market_cap": "Insurance - Specialty",
+      "price": "866.37M"
+    },
+    {
+      "symbol": "AMST",
+      "url": "/stocks/amst/",
+      "company_name": "Amesite Inc.",
+      "market_cap": "Software - Application",
+      "price": "12.57M"
+    },
+    {
+      "symbol": "AMT",
+      "url": "/stocks/amt/",
+      "company_name": "American Tower Corporation",
+      "market_cap": "REIT - Specialty",
+      "price": "95.94B"
+    },
+    {
+      "symbol": "AMTB",
+      "url": "/stocks/amtb/",
+      "company_name": "Amerant Bancorp Inc.",
+      "market_cap": "Banks - Regional",
+      "price": "843.44M"
+    },
+    {
+      "symbol": "AMTD",
+      "url": "/stocks/amtd/",
+      "company_name": "AMTD IDEA Group",
+      "market_cap": "Asset Management",
+      "price": "65.35M"
+    },
+    {
+      "symbol": "AMTM",
+      "url": "/stocks/amtm/",
+      "company_name": "Amentum Holdings, Inc.",
+      "market_cap": "Specialty Business Services",
+      "price": "6.34B"
+    },
+    {
+      "symbol": "AMTX",
+      "url": "/stocks/amtx/",
+      "company_name": "Aemetis, Inc.",
+      "market_cap": "Specialty Chemicals",
+      "price": "180.87M"
+    },
+    {
+      "symbol": "AMWD",
+      "url": "/stocks/amwd/",
+      "company_name": "American Woodmark Corporation",
+      "market_cap": "Furnishings, Fixtures & Appliances",
+      "price": "919.80M"
+    },
+    {
+      "symbol": "AMWL",
+      "url": "/stocks/amwl/",
+      "company_name": "American Well Corporation",
+      "market_cap": "Health Information Services",
+      "price": "111.62M"
+    },
+    {
+      "symbol": "AMX",
+      "url": "/stocks/amx/",
+      "company_name": "América Móvil, S.A.B. de C.V.",
+      "market_cap": "Telecom Services",
+      "price": "57.65B"
+    },
+    {
+      "symbol": "AMZE",
+      "url": "/stocks/amze/",
+      "company_name": "Amaze Holdings, Inc.",
+      "market_cap": "Beverages - Wineries & Distilleries",
+      "price": "17.70M"
+    },
+    {
+      "symbol": "AMZN",
+      "url": "/stocks/amzn/",
+      "company_name": "Amazon.com, Inc.",
+      "market_cap": "Internet Retail",
+      "price": "2,396.83B"
+    },
+    {
+      "symbol": "AN",
+      "url": "/stocks/an/",
+      "company_name": "AutoNation, Inc.",
+      "market_cap": "Auto & Truck Dealerships",
+      "price": "7.79B"
+    },
+    {
+      "symbol": "ANAB",
+      "url": "/stocks/anab/",
+      "company_name": "AnaptysBio, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "563.02M"
+    },
+    {
+      "symbol": "ANDE",
+      "url": "/stocks/ande/",
+      "company_name": "The Andersons, Inc.",
+      "market_cap": "Food Distribution",
+      "price": "1.37B"
+    },
+    {
+      "symbol": "ANEB",
+      "url": "/stocks/aneb/",
+      "company_name": "Anebulo Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "97.78M"
+    },
+    {
+      "symbol": "ANET",
+      "url": "/stocks/anet/",
+      "company_name": "Arista Networks Inc",
+      "market_cap": "Computer Hardware",
+      "price": "176.46B"
+    },
+    {
+      "symbol": "ANF",
+      "url": "/stocks/anf/",
+      "company_name": "Abercrombie & Fitch Co.",
+      "market_cap": "Apparel Retail",
+      "price": "4.80B"
+    },
+    {
+      "symbol": "ANGH",
+      "url": "/stocks/angh/",
+      "company_name": "Anghami Inc.",
+      "market_cap": "Entertainment",
+      "price": "20.80M"
+    },
+    {
+      "symbol": "ANGI",
+      "url": "/stocks/angi/",
+      "company_name": "Angi Inc.",
+      "market_cap": "Internet Content & Information",
+      "price": "801.04M"
+    },
+    {
+      "symbol": "ANGO",
+      "url": "/stocks/ango/",
+      "company_name": "AngioDynamics, Inc.",
+      "market_cap": "Medical Instruments & Supplies",
+      "price": "362.86M"
+    },
+    {
+      "symbol": "ANIK",
+      "url": "/stocks/anik/",
+      "company_name": "Anika Therapeutics, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "128.47M"
+    },
+    {
+      "symbol": "ANIP",
+      "url": "/stocks/anip/",
+      "company_name": "ANI Pharmaceuticals, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "1.79B"
+    },
+    {
+      "symbol": "ANIX",
+      "url": "/stocks/anix/",
+      "company_name": "Anixa Biosciences, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "97.76M"
+    },
+    {
+      "symbol": "ANL",
+      "url": "/stocks/anl/",
+      "company_name": "Adlai Nortye Ltd.",
+      "market_cap": "Biotechnology",
+      "price": "57.20M"
+    },
+    {
+      "symbol": "ANNA",
+      "url": "/stocks/anna/",
+      "company_name": "AleAnna, Inc.",
+      "market_cap": "Oil & Gas Exploration & Production",
+      "price": "286.61M"
+    },
+    {
+      "symbol": "ANNX",
+      "url": "/stocks/annx/",
+      "company_name": "Annexon, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "275.38M"
+    },
+    {
+      "symbol": "ANPA",
+      "url": "/stocks/anpa/",
+      "company_name": "Rich Sparkle Holdings Limited",
+      "market_cap": "Specialty Business Services",
+      "price": "500.00M"
+    },
+    {
+      "symbol": "ANRO",
+      "url": "/stocks/anro/",
+      "company_name": "Alto Neuroscience, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "85.01M"
+    },
+    {
+      "symbol": "ANSC",
+      "url": "/stocks/ansc/",
+      "company_name": "Agriculture & Natural Solutions Acquisition Corporation",
+      "market_cap": "Shell Companies",
+      "price": "470.06M"
+    },
+    {
+      "symbol": "ANTA",
+      "url": "/stocks/anta/",
+      "company_name": "Antalpha Platform Holding Company",
+      "market_cap": "Credit Services",
+      "price": "295.97M"
+    },
+    {
+      "symbol": "ANTE",
+      "url": "/stocks/ante/",
+      "company_name": "AirNet Technology Inc.",
+      "market_cap": "Advertising Agencies",
+      "price": "32.25M"
+    },
+    {
+      "symbol": "ANTX",
+      "url": "/stocks/antx/",
+      "company_name": "AN2 Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "32.14M"
+    },
+    {
+      "symbol": "ANVS",
+      "url": "/stocks/anvs/",
+      "company_name": "Annovis Bio, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "57.29M"
+    },
+    {
+      "symbol": "ANY",
+      "url": "/stocks/any/",
+      "company_name": "Sphere 3D Corp.",
+      "market_cap": "Capital Markets",
+      "price": "15.83M"
+    },
+    {
+      "symbol": "AOMR",
+      "url": "/stocks/aomr/",
+      "company_name": "Angel Oak Mortgage REIT, Inc.",
+      "market_cap": "REIT - Mortgage",
+      "price": "217.69M"
+    },
+    {
+      "symbol": "AON",
+      "url": "/stocks/aon/",
+      "company_name": "Aon plc",
+      "market_cap": "Insurance Brokers",
+      "price": "79.29B"
+    },
+    {
+      "symbol": "AORT",
+      "url": "/stocks/aort/",
+      "company_name": "Artivion, Inc.",
+      "market_cap": "Medical Devices",
+      "price": "2.04B"
+    },
+    {
+      "symbol": "AOS",
+      "url": "/stocks/aos/",
+      "company_name": "A. O. Smith Corporation",
+      "market_cap": "Specialty Industrial Machinery",
+      "price": "10.02B"
+    },
+    {
+      "symbol": "AOSL",
+      "url": "/stocks/aosl/",
+      "company_name": "Alpha and Omega Semiconductor Limited",
+      "market_cap": "Semiconductors",
+      "price": "816.02M"
+    },
+    {
+      "symbol": "AOUT",
+      "url": "/stocks/aout/",
+      "company_name": "American Outdoor Brands, Inc.",
+      "market_cap": "Leisure",
+      "price": "118.27M"
+    },
+    {
+      "symbol": "AP",
+      "url": "/stocks/ap/",
+      "company_name": "Ampco-Pittsburgh Corporation",
+      "market_cap": "Metal Fabrication",
+      "price": "64.30M"
+    },
+    {
+      "symbol": "APA",
+      "url": "/stocks/apa/",
+      "company_name": "APA Corporation",
+      "market_cap": "Oil & Gas Exploration & Production",
+      "price": "7.36B"
+    },
+    {
+      "symbol": "APAD",
+      "url": "/stocks/apad/",
+      "company_name": "A Paradise Acquisition Corp.",
+      "market_cap": "Shell Companies",
+      "price": "267.73M"
+    },
+    {
+      "symbol": "APAM",
+      "url": "/stocks/apam/",
+      "company_name": "Artisan Partners Asset Management Inc.",
+      "market_cap": "Asset Management",
+      "price": "3.88B"
+    },
+    {
+      "symbol": "APD",
+      "url": "/stocks/apd/",
+      "company_name": "Air Products and Chemicals, Inc.",
+      "market_cap": "Specialty Chemicals",
+      "price": "64.82B"
+    },
+    {
+      "symbol": "APDN",
+      "url": "/stocks/apdn/",
+      "company_name": "Applied DNA Sciences, Inc.",
+      "market_cap": "Diagnostics & Research",
+      "price": "2.11M"
+    },
+    {
+      "symbol": "APEI",
+      "url": "/stocks/apei/",
+      "company_name": "American Public Education, Inc.",
+      "market_cap": "Education & Training Services",
+      "price": "519.34M"
+    },
+    {
+      "symbol": "APG",
+      "url": "/stocks/apg/",
+      "company_name": "APi Group Corporation",
+      "market_cap": "Engineering & Construction",
+      "price": "14.82B"
+    },
+    {
+      "symbol": "APGE",
+      "url": "/stocks/apge/",
+      "company_name": "Apogee Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "2.19B"
+    },
+    {
+      "symbol": "APH",
+      "url": "/stocks/aph/",
+      "company_name": "Amphenol Corporation",
+      "market_cap": "Electronic Components",
+      "price": "135.93B"
+    },
+    {
+      "symbol": "API",
+      "url": "/stocks/api/",
+      "company_name": "Agora, Inc.",
+      "market_cap": "Software - Application",
+      "price": "367.96M"
+    },
+    {
+      "symbol": "APLD",
+      "url": "/stocks/apld/",
+      "company_name": "Applied Digital Corporation",
+      "market_cap": "Information Technology Services",
+      "price": "3.99B"
+    },
+    {
+      "symbol": "APLE",
+      "url": "/stocks/aple/",
+      "company_name": "Apple Hospitality REIT, Inc.",
+      "market_cap": "REIT - Hotel & Motel",
+      "price": "2.91B"
+    },
+    {
+      "symbol": "APLM",
+      "url": "/stocks/aplm/",
+      "company_name": "Apollomics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "6.93M"
+    },
+    {
+      "symbol": "APLS",
+      "url": "/stocks/apls/",
+      "company_name": "Apellis Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "3.05B"
+    },
+    {
+      "symbol": "APLT",
+      "url": "/stocks/aplt/",
+      "company_name": "Applied Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "64.29M"
+    },
+    {
+      "symbol": "APM",
+      "url": "/stocks/apm/",
+      "company_name": "Aptorum Group Limited",
+      "market_cap": "Biotechnology",
+      "price": "9.93M"
+    },
+    {
+      "symbol": "APO",
+      "url": "/stocks/apo/",
+      "company_name": "Apollo Global Management, Inc.",
+      "market_cap": "Asset Management",
+      "price": "82.53B"
+    },
+    {
+      "symbol": "APOG",
+      "url": "/stocks/apog/",
+      "company_name": "Apogee Enterprises, Inc.",
+      "market_cap": "Building Products & Equipment",
+      "price": "941.92M"
+    },
+    {
+      "symbol": "APP",
+      "url": "/stocks/app/",
+      "company_name": "AppLovin Corporation",
+      "market_cap": "Advertising Agencies",
+      "price": "154.58B"
+    },
+    {
+      "symbol": "APPF",
+      "url": "/stocks/appf/",
+      "company_name": "AppFolio, Inc.",
+      "market_cap": "Software - Application",
+      "price": "9.72B"
+    },
+    {
+      "symbol": "APPN",
+      "url": "/stocks/appn/",
+      "company_name": "Appian Corporation",
+      "market_cap": "Software - Infrastructure",
+      "price": "2.08B"
+    },
+    {
+      "symbol": "APPS",
+      "url": "/stocks/apps/",
+      "company_name": "Digital Turbine, Inc.",
+      "market_cap": "Software - Application",
+      "price": "460.05M"
+    },
+    {
+      "symbol": "APRE",
+      "url": "/stocks/apre/",
+      "company_name": "Aprea Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "9.40M"
+    },
+    {
+      "symbol": "APT",
+      "url": "/stocks/apt/",
+      "company_name": "Alpha Pro Tech, Ltd.",
+      "market_cap": "Building Products & Equipment",
+      "price": "52.36M"
+    },
+    {
+      "symbol": "APTV",
+      "url": "/stocks/aptv/",
+      "company_name": "Aptiv PLC",
+      "market_cap": "Auto Parts",
+      "price": "15.87B"
+    },
+    {
+      "symbol": "APUS",
+      "url": "/stocks/apus/",
+      "company_name": "Apimeds Pharmaceuticals US, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "18.64M"
+    },
+    {
+      "symbol": "APVO",
+      "url": "/stocks/apvo/",
+      "company_name": "Aptevo Therapeutics Inc.",
+      "market_cap": "Biotechnology",
+      "price": "7.41M"
+    },
+    {
+      "symbol": "APWC",
+      "url": "/stocks/apwc/",
+      "company_name": "Asia Pacific Wire & Cable Corporation Limited",
+      "market_cap": "Electrical Equipment & Parts",
+      "price": "35.25M"
+    },
+    {
+      "symbol": "APYX",
+      "url": "/stocks/apyx/",
+      "company_name": "Apyx Medical Corporation",
+      "market_cap": "Medical Devices",
+      "price": "83.84M"
+    },
+    {
+      "symbol": "AQB",
+      "url": "/stocks/aqb/",
+      "company_name": "AquaBounty Technologies, Inc.",
+      "market_cap": "Farm Products",
+      "price": "2.91M"
+    },
+    {
+      "symbol": "AQMS",
+      "url": "/stocks/aqms/",
+      "company_name": "Aqua Metals, Inc.",
+      "market_cap": "Waste Management",
+      "price": "4.11M"
+    },
+    {
+      "symbol": "AQN",
+      "url": "/stocks/aqn/",
+      "company_name": "Algonquin Power & Utilities Corp.",
+      "market_cap": "Utilities - Diversified",
+      "price": "4.42B"
+    },
+    {
+      "symbol": "AQST",
+      "url": "/stocks/aqst/",
+      "company_name": "Aquestive Therapeutics, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "388.92M"
+    },
+    {
+      "symbol": "AR",
+      "url": "/stocks/ar/",
+      "company_name": "Antero Resources Corporation",
+      "market_cap": "Oil & Gas Exploration & Production",
+      "price": "10.06B"
+    },
+    {
+      "symbol": "ARAI",
+      "url": "/stocks/arai/",
+      "company_name": "Arrive AI Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "224.99M"
+    },
+    {
+      "symbol": "ARAY",
+      "url": "/stocks/aray/",
+      "company_name": "Accuray Incorporated",
+      "market_cap": "Medical Devices",
+      "price": "167.95M"
+    },
+    {
+      "symbol": "ARBB",
+      "url": "/stocks/arbb/",
+      "company_name": "ARB IOT Group Limited",
+      "market_cap": "Information Technology Services",
+      "price": "8.37M"
+    },
+    {
+      "symbol": "ARBE",
+      "url": "/stocks/arbe/",
+      "company_name": "Arbe Robotics Ltd.",
+      "market_cap": "Software - Infrastructure",
+      "price": "142.50M"
+    },
+    {
+      "symbol": "ARBK",
+      "url": "/stocks/arbk/",
+      "company_name": "Argo Blockchain plc",
+      "market_cap": "Capital Markets",
+      "price": "21.26M"
+    },
+    {
+      "symbol": "ARCB",
+      "url": "/stocks/arcb/",
+      "company_name": "ArcBest Corporation",
+      "market_cap": "Trucking",
+      "price": "1.64B"
+    },
+    {
+      "symbol": "ARCC",
+      "url": "/stocks/arcc/",
+      "company_name": "Ares Capital Corporation",
+      "market_cap": "Asset Management",
+      "price": "15.82B"
+    },
+    {
+      "symbol": "ARCO",
+      "url": "/stocks/arco/",
+      "company_name": "Arcos Dorados Holdings Inc.",
+      "market_cap": "Restaurants",
+      "price": "1.56B"
+    },
+    {
+      "symbol": "ARCT",
+      "url": "/stocks/arct/",
+      "company_name": "Arcturus Therapeutics Holdings Inc.",
+      "market_cap": "Biotechnology",
+      "price": "459.07M"
+    },
+    {
+      "symbol": "ARDT",
+      "url": "/stocks/ardt/",
+      "company_name": "Ardent Health, Inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "1.81B"
+    },
+    {
+      "symbol": "ARDX",
+      "url": "/stocks/ardx/",
+      "company_name": "Ardelyx, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "1.37B"
+    },
+    {
+      "symbol": "ARE",
+      "url": "/stocks/are/",
+      "company_name": "Alexandria Real Estate Equities, Inc.",
+      "market_cap": "REIT - Office",
+      "price": "12.82B"
+    },
+    {
+      "symbol": "AREB",
+      "url": "/stocks/areb/",
+      "company_name": "American Rebel Holdings, Inc.",
+      "market_cap": "Footwear & Accessories",
+      "price": "8.67M"
+    },
+    {
+      "symbol": "AREC",
+      "url": "/stocks/arec/",
+      "company_name": "American Resources Corporation",
+      "market_cap": "Coking Coal",
+      "price": "132.87M"
+    },
+    {
+      "symbol": "AREN",
+      "url": "/stocks/aren/",
+      "company_name": "The Arena Group Holdings, Inc.",
+      "market_cap": "Internet Content & Information",
+      "price": "337.07M"
+    },
+    {
+      "symbol": "ARES",
+      "url": "/stocks/ares/",
+      "company_name": "Ares Management Corporation",
+      "market_cap": "Asset Management",
+      "price": "62.94B"
+    },
+    {
+      "symbol": "ARGX",
+      "url": "/stocks/argx/",
+      "company_name": "argenx SE",
+      "market_cap": "Biotechnology",
+      "price": "39.47B"
+    },
+    {
+      "symbol": "ARHS",
+      "url": "/stocks/arhs/",
+      "company_name": "Arhaus, Inc.",
+      "market_cap": "Specialty Retail",
+      "price": "1.74B"
+    },
+    {
+      "symbol": "ARI",
+      "url": "/stocks/ari/",
+      "company_name": "Apollo Commercial Real Estate Finance, Inc.",
+      "market_cap": "REIT - Mortgage",
+      "price": "1.41B"
+    },
+    {
+      "symbol": "ARIS",
+      "url": "/stocks/aris/",
+      "company_name": "Aris Water Solutions, Inc.",
+      "market_cap": "Utilities - Regulated Water",
+      "price": "1.41B"
+    },
+    {
+      "symbol": "ARKO",
+      "url": "/stocks/arko/",
+      "company_name": "Arko Corp.",
+      "market_cap": "Specialty Retail",
+      "price": "569.35M"
+    },
+    {
+      "symbol": "ARKR",
+      "url": "/stocks/arkr/",
+      "company_name": "Ark Restaurants Corp.",
+      "market_cap": "Restaurants",
+      "price": "24.74M"
+    },
+    {
+      "symbol": "ARL",
+      "url": "/stocks/arl/",
+      "company_name": "American Realty Investors, Inc.",
+      "market_cap": "Real Estate Services",
+      "price": "220.80M"
+    },
+    {
+      "symbol": "ARLO",
+      "url": "/stocks/arlo/",
+      "company_name": "Arlo Technologies, Inc.",
+      "market_cap": "Building Products & Equipment",
+      "price": "1.92B"
+    },
+    {
+      "symbol": "ARLP",
+      "url": "/stocks/arlp/",
+      "company_name": "Alliance Resource Partners, L.P.",
+      "market_cap": "Thermal Coal",
+      "price": "3.19B"
+    },
+    {
+      "symbol": "ARM",
+      "url": "/stocks/arm/",
+      "company_name": "Arm Holdings plc",
+      "market_cap": "Semiconductors",
+      "price": "152.55B"
+    },
+    {
+      "symbol": "ARMK",
+      "url": "/stocks/armk/",
+      "company_name": "Aramark",
+      "market_cap": "Specialty Business Services",
+      "price": "10.55B"
+    },
+    {
+      "symbol": "ARMN",
+      "url": "/stocks/armn/",
+      "company_name": "Aris Mining Corporation",
+      "market_cap": "Gold",
+      "price": "1.41B"
+    },
+    {
+      "symbol": "ARMP",
+      "url": "/stocks/armp/",
+      "company_name": "Armata Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "92.29M"
+    },
+    {
+      "symbol": "AROC",
+      "url": "/stocks/aroc/",
+      "company_name": "Archrock, Inc.",
+      "market_cap": "Oil & Gas Equipment & Services",
+      "price": "4.23B"
+    },
+    {
+      "symbol": "AROW",
+      "url": "/stocks/arow/",
+      "company_name": "Arrow Financial Corporation",
+      "market_cap": "Banks - Regional",
+      "price": "476.94M"
+    },
+    {
+      "symbol": "ARQ",
+      "url": "/stocks/arq/",
+      "company_name": "Arq, Inc.",
+      "market_cap": "Pollution & Treatment Controls",
+      "price": "328.30M"
+    },
+    {
+      "symbol": "ARQQ",
+      "url": "/stocks/arqq/",
+      "company_name": "Arqit Quantum Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "465.01M"
+    },
+    {
+      "symbol": "ARQT",
+      "url": "/stocks/arqt/",
+      "company_name": "Arcutis Biotherapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "1.80B"
+    },
+    {
+      "symbol": "ARR",
+      "url": "/stocks/arr/",
+      "company_name": "ARMOUR Residential REIT, Inc.",
+      "market_cap": "REIT - Mortgage",
+      "price": "1.72B"
+    },
+    {
+      "symbol": "ARRY",
+      "url": "/stocks/arry/",
+      "company_name": "Array Technologies, Inc.",
+      "market_cap": "Solar",
+      "price": "941.55M"
+    },
+    {
+      "symbol": "ARTL",
+      "url": "/stocks/artl/",
+      "company_name": "Artelo Biosciences, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "6.36M"
+    },
+    {
+      "symbol": "ARTNA",
+      "url": "/stocks/artna/",
+      "company_name": "Artesian Resources Corporation",
+      "market_cap": "Utilities - Regulated Water",
+      "price": "348.45M"
+    },
+    {
+      "symbol": "ARTV",
+      "url": "/stocks/artv/",
+      "company_name": "Artiva Biotherapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "61.06M"
+    },
+    {
+      "symbol": "ARTW",
+      "url": "/stocks/artw/",
+      "company_name": "Art's-Way Manufacturing Co., Inc.",
+      "market_cap": "Farm & Heavy Construction Machinery",
+      "price": "21.96M"
+    },
+    {
+      "symbol": "ARVN",
+      "url": "/stocks/arvn/",
+      "company_name": "Arvinas, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "520.53M"
+    },
+    {
+      "symbol": "ARW",
+      "url": "/stocks/arw/",
+      "company_name": "Arrow Electronics, Inc.",
+      "market_cap": "Electronics & Computer Distribution",
+      "price": "6.38B"
+    },
+    {
+      "symbol": "ARWR",
+      "url": "/stocks/arwr/",
+      "company_name": "Arrowhead Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "2.57B"
+    },
+    {
+      "symbol": "ARX",
+      "url": "/stocks/arx/",
+      "company_name": "Accelerant Holdings",
+      "market_cap": "Software - Application",
+      "price": "6.34B"
+    },
+    {
+      "symbol": "AS",
+      "url": "/stocks/as/",
+      "company_name": "Amer Sports, Inc.",
+      "market_cap": "Leisure",
+      "price": "21.20B"
+    },
+    {
+      "symbol": "ASA",
+      "url": "/stocks/asa/",
+      "company_name": "ASA Gold and Precious Metals Limited",
+      "market_cap": "Asset Management",
+      "price": "670.10M"
+    },
+    {
+      "symbol": "ASAN",
+      "url": "/stocks/asan/",
+      "company_name": "Asana, Inc.",
+      "market_cap": "Software - Application",
+      "price": "3.11B"
+    },
+    {
+      "symbol": "ASB",
+      "url": "/stocks/asb/",
+      "company_name": "Associated Banc-Corp",
+      "market_cap": "Banks - Regional",
+      "price": "4.09B"
+    },
+    {
+      "symbol": "ASBP",
+      "url": "/stocks/asbp/",
+      "company_name": "Aspire Biopharma Holdings, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "17.65M"
+    },
+    {
+      "symbol": "ASC",
+      "url": "/stocks/asc/",
+      "company_name": "Ardmore Shipping Corporation",
+      "market_cap": "Marine Shipping",
+      "price": "422.29M"
+    },
+    {
+      "symbol": "ASGN",
+      "url": "/stocks/asgn/",
+      "company_name": "ASGN Incorporated",
+      "market_cap": "Information Technology Services",
+      "price": "2.22B"
+    },
+    {
+      "symbol": "ASH",
+      "url": "/stocks/ash/",
+      "company_name": "Ashland Inc.",
+      "market_cap": "Specialty Chemicals",
+      "price": "2.46B"
+    },
+    {
+      "symbol": "ASIC",
+      "url": "/stocks/asic/",
+      "company_name": "Ategrity Specialty Insurance Company Holdings",
+      "market_cap": "Insurance - Property & Casualty",
+      "price": "922.51M"
+    },
+    {
+      "symbol": "ASIX",
+      "url": "/stocks/asix/",
+      "company_name": "AdvanSix Inc.",
+      "market_cap": "Chemicals",
+      "price": "517.29M"
+    },
+    {
+      "symbol": "ASLE",
+      "url": "/stocks/asle/",
+      "company_name": "AerSale Corporation",
+      "market_cap": "Airports & Air Services",
+      "price": "409.54M"
+    },
+    {
+      "symbol": "ASM",
+      "url": "/stocks/asm/",
+      "company_name": "Avino Silver & Gold Mines Ltd.",
+      "market_cap": "Other Precious Metals & Mining",
+      "price": "567.88M"
+    },
+    {
+      "symbol": "ASMB",
+      "url": "/stocks/asmb/",
+      "company_name": "Assembly Biosciences, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "368.77M"
+    },
+    {
+      "symbol": "ASML",
+      "url": "/stocks/asml/",
+      "company_name": "ASML Holding N.V.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "286.62B"
+    },
+    {
+      "symbol": "ASND",
+      "url": "/stocks/asnd/",
+      "company_name": "Ascendis Pharma A/S",
+      "market_cap": "Biotechnology",
+      "price": "11.64B"
+    },
+    {
+      "symbol": "ASNS",
+      "url": "/stocks/asns/",
+      "company_name": "Actelis Networks, Inc.",
+      "market_cap": "Communication Equipment",
+      "price": "6.54M"
+    },
+    {
+      "symbol": "ASO",
+      "url": "/stocks/aso/",
+      "company_name": "Academy Sports and Outdoors, Inc.",
+      "market_cap": "Specialty Retail",
+      "price": "3.48B"
+    },
+    {
+      "symbol": "ASPC",
+      "url": "/stocks/aspc/",
+      "company_name": "A SPAC III Acquisition Corp.",
+      "market_cap": "Shell Companies",
+      "price": "82.89M"
+    },
+    {
+      "symbol": "ASPI",
+      "url": "/stocks/aspi/",
+      "company_name": "ASP Isotopes Inc.",
+      "market_cap": "Chemicals",
+      "price": "1.02B"
+    },
+    {
+      "symbol": "ASPN",
+      "url": "/stocks/aspn/",
+      "company_name": "Aspen Aerogels, Inc.",
+      "market_cap": "Building Products & Equipment",
+      "price": "634.18M"
+    },
+    {
+      "symbol": "ASPS",
+      "url": "/stocks/asps/",
+      "company_name": "Altisource Portfolio Solutions S.A.",
+      "market_cap": "Real Estate Services",
+      "price": "117.66M"
+    },
+    {
+      "symbol": "ASR",
+      "url": "/stocks/asr/",
+      "company_name": "Grupo Aeroportuario del Sureste, S. A. B. de C. V.",
+      "market_cap": "Airports & Air Services",
+      "price": "9.75B"
+    },
+    {
+      "symbol": "ASRT",
+      "url": "/stocks/asrt/",
+      "company_name": "Assertio Holdings, Inc.",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "78.21M"
+    },
+    {
+      "symbol": "ASRV",
+      "url": "/stocks/asrv/",
+      "company_name": "AmeriServ Financial, Inc.",
+      "market_cap": "Banks - Regional",
+      "price": "48.07M"
+    },
+    {
+      "symbol": "ASST",
+      "url": "/stocks/asst/",
+      "company_name": "Asset Entities Inc.",
+      "market_cap": "Internet Content & Information",
+      "price": "76.36M"
+    },
+    {
+      "symbol": "ASTC",
+      "url": "/stocks/astc/",
+      "company_name": "Astrotech Corporation",
+      "market_cap": "Scientific & Technical Instruments",
+      "price": "8.83M"
+    },
+    {
+      "symbol": "ASTE",
+      "url": "/stocks/aste/",
+      "company_name": "Astec Industries, Inc.",
+      "market_cap": "Farm & Heavy Construction Machinery",
+      "price": "1.02B"
+    },
+    {
+      "symbol": "ASTH",
+      "url": "/stocks/asth/",
+      "company_name": "Astrana Health, Inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "1.50B"
+    },
+    {
+      "symbol": "ASTI",
+      "url": "/stocks/asti/",
+      "company_name": "Ascent Solar Technologies, Inc.",
+      "market_cap": "Solar",
+      "price": "5.85M"
+    },
+    {
+      "symbol": "ASTL",
+      "url": "/stocks/astl/",
+      "company_name": "Algoma Steel Group Inc.",
+      "market_cap": "Steel",
+      "price": "491.09M"
+    },
+    {
+      "symbol": "ASTS",
+      "url": "/stocks/asts/",
+      "company_name": "AST SpaceMobile, Inc.",
+      "market_cap": "Communication Equipment",
+      "price": "16.95B"
+    },
+    {
+      "symbol": "ASUR",
+      "url": "/stocks/asur/",
+      "company_name": "Asure Software, Inc.",
+      "market_cap": "Software - Application",
+      "price": "231.06M"
+    },
+    {
+      "symbol": "ASX",
+      "url": "/stocks/asx/",
+      "company_name": "ASE Technology Holding Co., Ltd.",
+      "market_cap": "Semiconductors",
+      "price": "21.60B"
+    },
+    {
+      "symbol": "ASYS",
+      "url": "/stocks/asys/",
+      "company_name": "Amtech Systems, Inc.",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "65.84M"
+    },
+    {
+      "symbol": "ATAI",
+      "url": "/stocks/atai/",
+      "company_name": "Atai Life Sciences N.V.",
+      "market_cap": "Biotechnology",
+      "price": "869.79M"
+    },
+    {
+      "symbol": "ATAT",
+      "url": "/stocks/atat/",
+      "company_name": "Atour Lifestyle Holdings Limited",
+      "market_cap": "Lodging",
+      "price": "4.93B"
+    },
+    {
+      "symbol": "ATCH",
+      "url": "/stocks/atch/",
+      "company_name": "AtlasClear Holdings, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "2.65M"
+    },
+    {
+      "symbol": "ATEC",
+      "url": "/stocks/atec/",
+      "company_name": "Alphatec Holdings, Inc.",
+      "market_cap": "Medical Devices",
+      "price": "2.35B"
+    },
+    {
+      "symbol": "ATEN",
+      "url": "/stocks/aten/",
+      "company_name": "A10 Networks, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "1.30B"
+    },
+    {
+      "symbol": "ATER",
+      "url": "/stocks/ater/",
+      "company_name": "Aterian, Inc.",
+      "market_cap": "Furnishings, Fixtures & Appliances",
+      "price": "11.02M"
+    },
+    {
+      "symbol": "ATEX",
+      "url": "/stocks/atex/",
+      "company_name": "Anterix Inc.",
+      "market_cap": "Telecom Services",
+      "price": "424.58M"
+    },
+    {
+      "symbol": "ATGE",
+      "url": "/stocks/atge/",
+      "company_name": "Adtalem Global Education Inc.",
+      "market_cap": "Education & Training Services",
+      "price": "4.67B"
+    },
+    {
+      "symbol": "ATGL",
+      "url": "/stocks/atgl/",
+      "company_name": "Alpha Technology Group Limited",
+      "market_cap": "Software - Infrastructure",
+      "price": "299.95M"
+    },
+    {
+      "symbol": "ATHA",
+      "url": "/stocks/atha/",
+      "company_name": "Athira Pharma, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "15.18M"
+    },
+    {
+      "symbol": "ATHE",
+      "url": "/stocks/athe/",
+      "company_name": "Alterity Therapeutics Limited",
+      "market_cap": "Biotechnology",
+      "price": "84.23M"
+    },
+    {
+      "symbol": "ATHM",
+      "url": "/stocks/athm/",
+      "company_name": "Autohome Inc.",
+      "market_cap": "Internet Content & Information",
+      "price": "3.52B"
+    },
+    {
+      "symbol": "ATHR",
+      "url": "/stocks/athr/",
+      "company_name": "Aether Holdings, Inc.",
+      "market_cap": "Software - Application",
+      "price": "103.36M"
+    },
+    {
+      "symbol": "ATI",
+      "url": "/stocks/ati/",
+      "company_name": "ATI Inc.",
+      "market_cap": "Metal Fabrication",
+      "price": "10.31B"
+    },
+    {
+      "symbol": "ATII",
+      "url": "/stocks/atii/",
+      "company_name": "Archimedes Tech SPAC Partners II Co.",
+      "market_cap": "Shell Companies",
+      "price": "248.34M"
+    },
+    {
+      "symbol": "ATKR",
+      "url": "/stocks/atkr/",
+      "company_name": "Atkore Inc.",
+      "market_cap": "Electrical Equipment & Parts",
+      "price": "1.94B"
+    },
+    {
+      "symbol": "ATLC",
+      "url": "/stocks/atlc/",
+      "company_name": "Atlanticus Holdings Corporation",
+      "market_cap": "Credit Services",
+      "price": "922.81M"
+    },
+    {
+      "symbol": "ATLN",
+      "url": "/stocks/atln/",
+      "company_name": "Atlantic International Corp.",
+      "market_cap": "Staffing & Employment Services",
+      "price": "175.09M"
+    },
+    {
+      "symbol": "ATLO",
+      "url": "/stocks/atlo/",
+      "company_name": "Ames National Corporation",
+      "market_cap": "Banks - Regional",
+      "price": "171.48M"
+    },
+    {
+      "symbol": "ATLX",
+      "url": "/stocks/atlx/",
+      "company_name": "Atlas Lithium Corporation",
+      "market_cap": "Other Industrial Metals & Mining",
+      "price": "121.41M"
+    },
+    {
+      "symbol": "ATMC",
+      "url": "/stocks/atmc/",
+      "company_name": "AlphaTime Acquisition Corp",
+      "market_cap": "Shell Companies",
+      "price": "41.36M"
+    },
+    {
+      "symbol": "ATMU",
+      "url": "/stocks/atmu/",
+      "company_name": "Atmus Filtration Technologies Inc.",
+      "market_cap": "Auto Parts",
+      "price": "3.68B"
+    },
+    {
+      "symbol": "ATMV",
+      "url": "/stocks/atmv/",
+      "company_name": "AlphaVest Acquisition Corp",
+      "market_cap": "Shell Companies",
+      "price": "46.14M"
+    },
+    {
+      "symbol": "ATNF",
+      "url": "/stocks/atnf/",
+      "company_name": "180 Life Sciences Corp.",
+      "market_cap": "Biotechnology",
+      "price": "2.49B"
+    },
+    {
+      "symbol": "ATNI",
+      "url": "/stocks/atni/",
+      "company_name": "ATN International, Inc.",
+      "market_cap": "Telecom Services",
+      "price": "239.09M"
+    },
+    {
+      "symbol": "ATNM",
+      "url": "/stocks/atnm/",
+      "company_name": "Actinium Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "48.35M"
+    },
+    {
+      "symbol": "ATO",
+      "url": "/stocks/ato/",
+      "company_name": "Atmos Energy Corporation",
+      "market_cap": "Utilities - Regulated Gas",
+      "price": "26.51B"
+    },
+    {
+      "symbol": "ATOM",
+      "url": "/stocks/atom/",
+      "company_name": "Atomera Incorporated",
+      "market_cap": "Semiconductor Equipment & Materials",
+      "price": "115.86M"
+    },
+    {
+      "symbol": "ATOS",
+      "url": "/stocks/atos/",
+      "company_name": "Atossa Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "101.71M"
+    },
+    {
+      "symbol": "ATPC",
+      "url": "/stocks/atpc/",
+      "company_name": "Agape ATP Corporation",
+      "market_cap": "Packaged Foods",
+      "price": "67.10M"
+    },
+    {
+      "symbol": "ATR",
+      "url": "/stocks/atr/",
+      "company_name": "AptarGroup, Inc.",
+      "market_cap": "Medical Instruments & Supplies",
+      "price": "9.18B"
+    },
+    {
+      "symbol": "ATRA",
+      "url": "/stocks/atra/",
+      "company_name": "Atara Biotherapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "78.97M"
+    },
+    {
+      "symbol": "ATRC",
+      "url": "/stocks/atrc/",
+      "company_name": "AtriCure, Inc.",
+      "market_cap": "Medical Instruments & Supplies",
+      "price": "1.77B"
+    },
+    {
+      "symbol": "ATRO",
+      "url": "/stocks/atro/",
+      "company_name": "Astronics Corporation",
+      "market_cap": "Aerospace & Defense",
+      "price": "1.18B"
+    },
+    {
+      "symbol": "ATS",
+      "url": "/stocks/ats/",
+      "company_name": "ATS Corporation",
+      "market_cap": "Specialty Industrial Machinery",
+      "price": "2.80B"
+    },
+    {
+      "symbol": "ATUS",
+      "url": "/stocks/atus/",
+      "company_name": "Altice USA, Inc.",
+      "market_cap": "Telecom Services",
+      "price": "1.05B"
+    },
+    {
+      "symbol": "ATXG",
+      "url": "/stocks/atxg/",
+      "company_name": "Addentax Group Corp.",
+      "market_cap": "Integrated Freight & Logistics",
+      "price": "4.74M"
+    },
+    {
+      "symbol": "ATXS",
+      "url": "/stocks/atxs/",
+      "company_name": "Astria Therapeutics, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "403.50M"
+    },
+    {
+      "symbol": "ATYR",
+      "url": "/stocks/atyr/",
+      "company_name": "aTyr Pharma, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "506.59M"
+    },
+    {
+      "symbol": "AU",
+      "url": "/stocks/au/",
+      "company_name": "AngloGold Ashanti plc",
+      "market_cap": "Gold",
+      "price": "28.63B"
+    },
+    {
+      "symbol": "AUB",
+      "url": "/stocks/aub/",
+      "company_name": "Atlantic Union Bankshares Corporation",
+      "market_cap": "Banks - Regional",
+      "price": "4.82B"
+    },
+    {
+      "symbol": "AUBN",
+      "url": "/stocks/aubn/",
+      "company_name": "Auburn National Bancorporation, Inc.",
+      "market_cap": "Banks - Regional",
+      "price": "92.72M"
+    },
+    {
+      "symbol": "AUDC",
+      "url": "/stocks/audc/",
+      "company_name": "AudioCodes Ltd.",
+      "market_cap": "Communication Equipment",
+      "price": "298.03M"
+    },
+    {
+      "symbol": "AUGO",
+      "url": "/stocks/augo/",
+      "company_name": "Aura Minerals Inc.",
+      "market_cap": "Gold",
+      "price": "2.22B"
+    },
+    {
+      "symbol": "AUID",
+      "url": "/stocks/auid/",
+      "company_name": "authID Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "59.96M"
+    },
+    {
+      "symbol": "AUNA",
+      "url": "/stocks/auna/",
+      "company_name": "Auna S.A.",
+      "market_cap": "Medical Care Facilities",
+      "price": "466.75M"
+    },
+    {
+      "symbol": "AUPH",
+      "url": "/stocks/auph/",
+      "company_name": "Aurinia Pharmaceuticals Inc.",
+      "market_cap": "Biotechnology",
+      "price": "1.52B"
+    },
+    {
+      "symbol": "AUR",
+      "url": "/stocks/aur/",
+      "company_name": "Aurora Innovation, Inc.",
+      "market_cap": "Information Technology Services",
+      "price": "11.90B"
+    },
+    {
+      "symbol": "AURA",
+      "url": "/stocks/aura/",
+      "company_name": "Aura Biosciences, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "442.09M"
+    },
+    {
+      "symbol": "AUST",
+      "url": "/stocks/aust/",
+      "company_name": "Austin Gold Corp.",
+      "market_cap": "Gold",
+      "price": "17.52M"
+    },
+    {
+      "symbol": "AUTL",
+      "url": "/stocks/autl/",
+      "company_name": "Autolus Therapeutics plc",
+      "market_cap": "Biotechnology",
+      "price": "569.54M"
+    },
+    {
+      "symbol": "AUUD",
+      "url": "/stocks/auud/",
+      "company_name": "Auddia Inc.",
+      "market_cap": "Software - Application",
+      "price": "1.67M"
+    },
+    {
+      "symbol": "AVA",
+      "url": "/stocks/ava/",
+      "company_name": "Avista Corporation",
+      "market_cap": "Utilities - Diversified",
+      "price": "3.07B"
+    },
+    {
+      "symbol": "AVAH",
+      "url": "/stocks/avah/",
+      "company_name": "Aveanna Healthcare Holdings Inc.",
+      "market_cap": "Medical Care Facilities",
+      "price": "1.57B"
+    },
+    {
+      "symbol": "AVAL",
+      "url": "/stocks/aval/",
+      "company_name": "Grupo Aval Acciones y Valores S.A.",
+      "market_cap": "Banks - Regional",
+      "price": "3.49B"
+    },
+    {
+      "symbol": "AVAV",
+      "url": "/stocks/avav/",
+      "company_name": "AeroVironment, Inc.",
+      "market_cap": "Aerospace & Defense",
+      "price": "12.59B"
+    },
+    {
+      "symbol": "AVB",
+      "url": "/stocks/avb/",
+      "company_name": "AvalonBay Communities, Inc.",
+      "market_cap": "REIT - Residential",
+      "price": "26.70B"
+    },
+    {
+      "symbol": "AVBC",
+      "url": "/stocks/avbc/",
+      "company_name": "Avidia Bancorp, Inc.",
+      "market_cap": "Banks - Regional",
+      "price": "294.52M"
+    },
+    {
+      "symbol": "AVBH",
+      "url": "/stocks/avbh/",
+      "company_name": "Avidbank Holdings, Inc.",
+      "market_cap": "Banks - Regional",
+      "price": "251.37M"
+    },
+    {
+      "symbol": "AVBP",
+      "url": "/stocks/avbp/",
+      "company_name": "ArriVent BioPharma, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "687.44M"
+    },
+    {
+      "symbol": "AVD",
+      "url": "/stocks/avd/",
+      "company_name": "American Vanguard Corporation",
+      "market_cap": "Agricultural Inputs",
+      "price": "145.28M"
+    },
+    {
+      "symbol": "AVDL",
+      "url": "/stocks/avdl/",
+      "company_name": "Avadel Pharmaceuticals plc",
+      "market_cap": "Drug Manufacturers - Specialty & Generic",
+      "price": "1.32B"
+    },
+    {
+      "symbol": "AVDX",
+      "url": "/stocks/avdx/",
+      "company_name": "AvidXchange Holdings, Inc.",
+      "market_cap": "Software - Infrastructure",
+      "price": "2.05B"
+    },
+    {
+      "symbol": "AVGO",
+      "url": "/stocks/avgo/",
+      "company_name": "Broadcom Inc.",
+      "market_cap": "Semiconductors",
+      "price": "1,476.89B"
+    },
+    {
+      "symbol": "AVIR",
+      "url": "/stocks/avir/",
+      "company_name": "Atea Pharmaceuticals, Inc.",
+      "market_cap": "Biotechnology",
+      "price": "281.72M"
+    },
+    {
+      "symbol": "AVNS",
+      "url": "/stocks/avns/",
+      "company_name": "Avanos Medical, Inc.",
+      "market_cap": "Medical Devices",
+      "price": "504.16M"
+    },
+    {
+      "symbol": "AVNT",
+      "url": "/stocks/avnt/",
+      "company_name": "Avient Corporation",
+      "market_cap": "Specialty Chemicals",
+      "price": "3.17B"
+    },
+    {
+      "symbol": "AVNW",
+      "url": "/stocks/avnw/",
+      "company_name": "Aviat Networks, Inc.",
+      "market_cap": "Communication Equipment",
+      "price": "286.85M"
+    },
+    {
+      "symbol": "AVO",
+      "url": "/stocks/avo/",
+      "company_name": "Mission Produce, Inc.",
+      "market_cap": "Food Distribution",
+      "price": "879.90M"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+gql[requests]
+python-dotenv
+schedule
+psycopg2-binary
+yfinance 
