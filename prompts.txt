@@ -1,0 +1,9 @@
+i see in the api docs that you can call for multiple data at one
+tickers = yf.Tickers('msft aapl goog')
+and then the data for each tcicker can be accesed like this:
+tickers.tickers['MSFT'].info
+tickers.tickers['AAPL'].info
+
+Redo the api scraper to use this functionality, work in batches and have the size of the batch as an input with default of 10.
+
+Also change the db_module so it can insert data in bulk so the whole batch can be inserted at once

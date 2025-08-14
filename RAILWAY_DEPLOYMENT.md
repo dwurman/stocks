@@ -4,8 +4,11 @@ This guide explains how to deploy the `api_to_database.py` script to Railway to 
 
 ## What This Deployment Does
 
-- Runs `python api_to_database.py -b 15` daily at 9:00 AM UTC
-- Processes ticker data in batches of 15
+- Runs `python api_to_database.py -b 15 --skip-existing --hours-window 24` daily at 9:00 AM UTC
+- **Smart Filtering**: Only processes tickers without data in the last 24 hours
+- **Batch Processing**: Processes ticker data in batches of 15
+- **Error Handling**: Improved handling of numeric overflow and infinite values
+- **Database Schema**: Enhanced schema with larger precision fields
 - Saves data to your Nhost database
 - Provides comprehensive logging and error handling
 
@@ -51,6 +54,35 @@ Check the Railway logs to ensure:
 - ✅ Database connection established
 - ✅ Ticker data processed
 
+## Time-Based Filtering Options
+
+The deployment now includes smart filtering to avoid reprocessing tickers with recent data:
+
+### Default Behavior (24 hours)
+- **`--skip-existing`**: Skips tickers with data in the last 24 hours
+- **`--hours-window 24`**: Configurable time window (default: 24 hours)
+
+### Custom Time Windows
+```bash
+# Process tickers without data in last 6 hours
+python api_to_database.py -s -hw 6
+
+# Process tickers without data in last 12 hours  
+python api_to_database.py -s -hw 12
+
+# Process tickers without data in last 48 hours
+python api_to_database.py -s -hw 48
+
+# Process tickers without data in last week
+python api_to_database.py -s -hw 168
+```
+
+### Benefits
+- **Efficient**: Only processes tickers that need updating
+- **Flexible**: Adjust time windows based on your needs
+- **Database Friendly**: Reduces unnecessary database operations
+- **Cost Effective**: Minimizes API calls and processing time
+
 ## Configuration Files
 
 - **`railway.json`**: Main Railway configuration
@@ -90,6 +122,10 @@ You can modify this in `railway.json` if you need a different schedule.
    - Ensure `requirements.txt` includes all needed packages
    - Check build logs for installation errors
 
+4. **Numeric Overflow Errors**
+   - Run `python reset_database.py` to recreate tables with new schema
+   - New schema handles larger numbers and infinite values better
+
 ### Debug Mode
 
 To test locally before deploying:
@@ -102,7 +138,10 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 python railway_deploy.py
 
 # Test the main script directly
-python api_to_database.py -b 15
+python api_to_database.py -b 15 --skip-existing
+
+# Test time filtering
+python test_time_filtering.py
 ```
 
 ## Customization
@@ -110,7 +149,7 @@ python api_to_database.py -b 15
 ### Change Batch Size
 Modify the command in `railway_deploy.py`:
 ```python
-cmd = ["python", "api_to_database.py", "-b", "20"]  # Change 15 to desired size
+cmd = ["python", "api_to_database.py", "-b", "20", "--skip-existing", "--hours-window", "24"]
 ```
 
 ### Change Schedule
@@ -122,10 +161,10 @@ Modify the cron expression in `railway.json`:
 }
 ```
 
-### Add More Options
-Modify the command in `railway_deploy.py`:
+### Change Time Window
+Modify the hours window in `railway_deploy.py`:
 ```python
-cmd = ["python", "api_to_database.py", "-b", "15", "--skip-existing", "-f", "custom_tickers.txt"]
+cmd = ["python", "api_to_database.py", "-b", "15", "--skip-existing", "--hours-window", "48"]
 ```
 
 ## Security Notes
@@ -141,3 +180,4 @@ If you encounter issues:
 2. Verify environment variables
 3. Test locally with the same configuration
 4. Check Railway status page for service issues
+5. Run `python reset_database.py` if you get numeric overflow errors

@@ -157,8 +157,8 @@ class DatabaseManager:
                 quote_type TEXT,
                 
                 -- Market data
-                market_cap BIGINT,
-                enterprise_value BIGINT,
+                market_cap NUMERIC(20,2),
+                enterprise_value NUMERIC(20,2),
                 float_shares BIGINT,
                 shares_outstanding BIGINT,
                 shares_short BIGINT,
@@ -186,38 +186,38 @@ class DatabaseManager:
                 ask_size INTEGER,
                 
                 -- Financial ratios
-                trailing_pe DECIMAL(10,2),
-                forward_pe DECIMAL(10,2),
-                peg_ratio DECIMAL(10,2),
-                price_to_book DECIMAL(10,2),
-                price_to_sales_trailing_12_months DECIMAL(10,2),
-                debt_to_equity DECIMAL(10,2),
-                return_on_equity DECIMAL(10,2),
-                return_on_assets DECIMAL(10,2),
+                trailing_pe DECIMAL(15,4),
+                forward_pe DECIMAL(15,4),
+                peg_ratio DECIMAL(15,4),
+                price_to_book DECIMAL(15,4),
+                price_to_sales_trailing_12_months DECIMAL(15,4),
+                debt_to_equity DECIMAL(15,4),
+                return_on_equity DECIMAL(15,4),
+                return_on_assets DECIMAL(15,4),
                 
                 -- Earnings and dividends
-                trailing_eps DECIMAL(10,2),
-                forward_eps DECIMAL(10,2),
-                dividend_yield DECIMAL(10,2),
-                dividend_rate DECIMAL(10,2),
-                payout_ratio DECIMAL(10,2),
-                five_year_avg_dividend_yield DECIMAL(10,2),
+                trailing_eps DECIMAL(15,4),
+                forward_eps DECIMAL(15,4),
+                dividend_yield DECIMAL(15,4),
+                dividend_rate DECIMAL(15,4),
+                payout_ratio DECIMAL(15,4),
+                five_year_avg_dividend_yield DECIMAL(15,4),
                 
                 -- Growth metrics
-                revenue_growth DECIMAL(10,2),
-                earnings_growth DECIMAL(10,2),
-                profit_margins DECIMAL(10,2),
-                operating_margins DECIMAL(10,2),
-                ebitda_margins DECIMAL(10,2),
+                revenue_growth DECIMAL(15,4),
+                earnings_growth DECIMAL(15,4),
+                profit_margins DECIMAL(15,4),
+                operating_margins DECIMAL(15,4),
+                ebitda_margins DECIMAL(15,4),
                 
                 -- Additional metrics
-                beta DECIMAL(10,2),
-                book_value DECIMAL(10,2),
-                short_ratio DECIMAL(10,2),
-                price_target_low DECIMAL(10,2),
-                price_target_mean DECIMAL(10,2),
-                price_target_high DECIMAL(10,2),
-                price_target_median DECIMAL(10,2),
+                beta DECIMAL(15,4),
+                book_value DECIMAL(15,4),
+                short_ratio DECIMAL(15,4),
+                price_target_low DECIMAL(15,4),
+                price_target_mean DECIMAL(15,4),
+                price_target_high DECIMAL(15,4),
+                price_target_median DECIMAL(15,4),
                 
                 -- Market status
                 regular_market_time BIGINT,
@@ -226,9 +226,9 @@ class DatabaseManager:
                 regular_market_previous_close DECIMAL(10,2),
                 
                 -- Additional short ratio fields
-                shares_short_ratio DECIMAL(10,2),
-                shares_short_ratio_prev_month DECIMAL(10,2),
-                shares_short_ratio_prior_month DECIMAL(10,2),
+                shares_short_ratio DECIMAL(15,4),
+                shares_short_ratio_prev_month DECIMAL(15,4),
+                shares_short_ratio_prior_month DECIMAL(15,4),
                 shares_short_ratio_date DATE,
                 
                 -- Timestamps
@@ -717,7 +717,34 @@ class DatabaseManager:
                 return True
                     
         except Exception as e:
-            logging.error(f"Error in bulk insert: {str(e)}")
+            error_msg = str(e)
+            logging.error(f"Error in bulk insert: {error_msg}")
+            
+            # Check for specific numeric overflow errors
+            if "numeric field overflow" in error_msg.lower():
+                logging.error("🔴 NUMERIC OVERFLOW ERROR DETECTED!")
+                logging.error("This usually means some ticker data contains infinite values or extremely large numbers")
+                logging.error("The data cleaning should have caught these, but some may have slipped through")
+                
+                # Log the problematic data for debugging
+                logging.error("Problematic data that may cause overflow:")
+                for i, ticker_data in enumerate(ticker_data_list):
+                    data = ticker_data.get('data', {})
+                    ticker = ticker_data.get('ticker', 'UNKNOWN')
+                    
+                    # Check for problematic values in numeric fields
+                    problematic_fields = []
+                    for field, value in data.items():
+                        if isinstance(value, (int, float)):
+                            if not isinstance(value, bool):  # Skip boolean values
+                                if abs(value) > 99999999.99:
+                                    problematic_fields.append(f"{field}: {value}")
+                                elif not isinstance(value, int) and not value.isfinite():
+                                    problematic_fields.append(f"{field}: {value}")
+                    
+                    if problematic_fields:
+                        logging.error(f"  Ticker {ticker} has problematic values: {problematic_fields}")
+            
             if self.connection:
                 self.connection.rollback()
             return False
@@ -786,3 +813,91 @@ class DatabaseManager:
     def __del__(self):
         """Destructor to ensure connection is closed"""
         self.close_connection()
+
+    def check_ticker_exists_today(self, ticker):
+        """Check if a record already exists for this ticker today"""
+        return self._check_ticker_exists_in_window(ticker, hours=24)
+    
+    def check_ticker_exists_last_24h(self, ticker):
+        """Check if a record already exists for this ticker in the last 24 hours"""
+        return self._check_ticker_exists_in_window(ticker, hours=24)
+    
+    def check_ticker_exists_in_window(self, ticker, hours=24):
+        """Check if a record already exists for this ticker within the specified hours window"""
+        if self.fallback_mode:
+            logging.info(f"FALLBACK MODE: Would check if {ticker} exists in last {hours} hours")
+            return False
+        
+        try:
+            from datetime import datetime, timedelta
+            
+            # Calculate the time window
+            now = datetime.now()
+            window_start = now - timedelta(hours=hours)
+            
+            check_sql = """
+            SELECT id, scraped_at FROM scraped_data 
+            WHERE ticker = %s 
+            AND scraped_at >= %s
+            LIMIT 1;
+            """
+            
+            with self.connection.cursor() as cursor:
+                cursor.execute(check_sql, (ticker, window_start))
+                result = cursor.fetchone()
+                
+                if result:
+                    record_id, scraped_at = result
+                    time_diff = now - scraped_at
+                    hours_diff = time_diff.total_seconds() / 3600
+                    logging.debug(f"Found existing record for {ticker} from {hours_diff:.1f} hours ago")
+                    return True
+                else:
+                    logging.debug(f"No recent record found for {ticker} in last {hours} hours")
+                    return False
+                    
+        except Exception as e:
+            logging.error(f"Error checking if {ticker} exists in last {hours} hours: {e}")
+            # If we can't check, assume it doesn't exist to be safe
+            return False
+    
+    def get_tickers_without_recent_data(self, ticker_list, hours=24):
+        """Get list of tickers that don't have data within the specified hours window"""
+        if self.fallback_mode:
+            logging.info(f"FALLBACK MODE: Would check {len(ticker_list)} tickers for data in last {hours} hours")
+            return ticker_list
+        
+        if not ticker_list:
+            return []
+        
+        try:
+            from datetime import datetime, timedelta
+            
+            # Calculate the time window
+            now = datetime.now()
+            window_start = now - timedelta(hours=hours)
+            
+            # Get all tickers with recent data
+            check_sql = """
+            SELECT DISTINCT ticker FROM scraped_data 
+            WHERE scraped_at >= %s;
+            """
+            
+            recent_tickers = set()
+            with self.connection.cursor() as cursor:
+                cursor.execute(check_sql, (window_start,))
+                results = cursor.fetchall()
+                recent_tickers = {row[0] for row in results}
+            
+            # Filter out tickers with recent data
+            tickers_without_data = [ticker for ticker in ticker_list if ticker not in recent_tickers]
+            
+            logging.info(f"Found {len(recent_tickers)} tickers with data in last {hours} hours")
+            logging.info(f"Filtered to {len(tickers_without_data)} tickers without recent data")
+            
+            return tickers_without_data
+                    
+        except Exception as e:
+            logging.error(f"Error filtering tickers by recent data: {e}")
+            # If we can't check, return all tickers to be safe
+            return ticker_list

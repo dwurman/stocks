@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
 """
-Script to reset the database schema for the simplified Ticker.info approach
+Script to reset the database and recreate tables with proper schema
 """
 
-import os
 import logging
-from dotenv import load_dotenv
 from db_module import DatabaseManager
-
-# Load environment variables
-load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -18,45 +13,63 @@ logging.basicConfig(
 )
 
 def reset_database():
-    """Reset the database schema"""
+    """Reset the database by dropping and recreating tables"""
     try:
-        logging.info("🔄 Resetting database schema...")
+        print("🗑️  Starting database reset...")
         
         # Initialize database manager
         db_manager = DatabaseManager()
         
         if db_manager.fallback_mode:
-            logging.error("❌ Cannot reset database in fallback mode")
+            print("❌ Cannot reset database - running in fallback mode")
             return False
         
-        # Drop existing tables
-        with db_manager.connection.cursor() as cursor:
-            logging.info("🗑️ Dropping existing tables...")
-            
-            # Drop scraped_data table
-            cursor.execute("DROP TABLE IF EXISTS scraped_data CASCADE;")
-            
-            db_manager.connection.commit()
-            logging.info("✅ Old tables dropped successfully")
+        print("🔧 Dropping existing tables...")
         
-        # Recreate tables with new schema
-        logging.info("🏗️ Creating new schema...")
+        # Drop the existing table
+        with db_manager.connection.cursor() as cursor:
+            cursor.execute("DROP TABLE IF EXISTS scraped_data CASCADE;")
+            db_manager.connection.commit()
+            print("✅ Dropped existing scraped_data table")
+        
+        print("🔧 Recreating tables with new schema...")
+        
+        # Recreate the table with the new schema
         db_manager._create_table_if_not_exists()
         
-        logging.info("🎉 Database schema reset completed successfully!")
+        print("✅ Database reset completed successfully!")
+        print("📊 New schema includes:")
+        print("   - Market cap and enterprise value: NUMERIC(20,2)")
+        print("   - Financial ratios: DECIMAL(15,4)")
+        print("   - Better handling of large numbers and infinite values")
+        
         return True
         
     except Exception as e:
-        logging.error(f"❌ Database reset failed: {str(e)}")
+        print(f"❌ Error resetting database: {e}")
+        logging.error(f"Database reset error: {e}")
         return False
-    finally:
-        if 'db_manager' in locals():
-            db_manager.close_connection()
+
+def main():
+    """Main function"""
+    print("🚀 Database Reset Tool")
+    print("=" * 50)
+    
+    # Confirm before proceeding
+    response = input("⚠️  This will DELETE ALL DATA and recreate tables. Continue? (y/N): ")
+    if response.lower() != 'y':
+        print("❌ Operation cancelled")
+        return
+    
+    # Reset the database
+    success = reset_database()
+    
+    if success:
+        print("\n🎉 Database reset completed successfully!")
+        print("💡 You can now run your scraper without numeric overflow errors")
+    else:
+        print("\n❌ Database reset failed. Check logs for details.")
 
 if __name__ == "__main__":
-    success = reset_database()
-    if success:
-        logging.info("🚀 Ready to test the new simplified schema!")
-    else:
-        logging.error("💥 Schema reset failed!")
+    main()
 

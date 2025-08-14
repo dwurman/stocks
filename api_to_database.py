@@ -233,6 +233,10 @@ class APIToDatabaseBridge:
         if str_value in ['N/A', 'n/a', 'NA', 'na', '', 'nan', 'NaN', 'None', 'null']:
             return None
         
+        # Check for infinite values
+        if str_value.lower() in ['inf', '-inf', 'infinity', '-infinity']:
+            return None
+        
         # Try to convert to float/int
         try:
             # Remove any currency symbols or commas
@@ -246,6 +250,15 @@ class APIToDatabaseBridge:
             # Try to convert to float first
             float_val = float(cleaned)
             
+            # Check for infinite values after conversion
+            if not float_val.isfinite():
+                return None
+            
+            # Check for extremely large values that would cause database overflow
+            # DECIMAL(10,2) can handle up to 99999999.99
+            if abs(float_val) > 99999999.99:
+                return None
+            
             # If it's a whole number, return as int
             if float_val.is_integer():
                 return int(float_val)
@@ -256,8 +269,8 @@ class APIToDatabaseBridge:
             # If conversion fails, return None
             return None
     
-    def get_tickers_from_file(self, filename='all_tickers_api.txt', count=None, skip_existing=False):
-        """Load ticker list from file in alphabetical order, optionally skipping existing tickers"""
+    def get_tickers_from_file(self, filename='all_tickers_api.txt', count=None, skip_existing=False, hours_window=24):
+        """Load ticker list from file in alphabetical order, optionally skipping existing tickers within time window"""
         try:
             with open(filename, 'r') as f:
                 all_tickers = [line.strip() for line in f if line.strip()]
@@ -266,25 +279,13 @@ class APIToDatabaseBridge:
             all_tickers.sort()
             
             if skip_existing and self.use_db:
-                # Filter out tickers that already have data for today
-                filtered_tickers = []
-                today = datetime.now().date()
+                # Use the new efficient bulk filtering method
+                all_tickers = self.db_manager.get_tickers_without_recent_data(all_tickers, hours=hours_window)
                 
-                self.logger.info(f"Checking which tickers already have data for {today}...")
-                
-                for ticker in all_tickers:
-                    try:
-                        # Check if ticker already exists for today
-                        existing = self.db_manager.check_ticker_exists_today(ticker)
-                        if not existing:
-                            filtered_tickers.append(ticker)
-                    except Exception as e:
-                        self.logger.warning(f"Error checking {ticker}: {e}")
-                        # If we can't check, include the ticker to be safe
-                        filtered_tickers.append(ticker)
-                
-                all_tickers = filtered_tickers
-                self.logger.info(f"Filtered to {len(all_tickers)} tickers without data for today")
+                if hours_window == 24:
+                    self.logger.info(f"Filtered to {len(all_tickers)} tickers without data in last 24 hours")
+                else:
+                    self.logger.info(f"Filtered to {len(all_tickers)} tickers without data in last {hours_window} hours")
             
             if count and count > len(all_tickers):
                 count = len(all_tickers)
@@ -316,6 +317,7 @@ def main():
         count = None
         skip_existing = False
         batch_size = 10
+        hours_window = 24
         
         i = 1
         while i < len(sys.argv):
@@ -335,6 +337,10 @@ def main():
                 if i + 1 < len(sys.argv):
                     batch_size = int(sys.argv[i + 1])
                     i += 1
+            elif arg == '--hours-window' or arg == '-hw':
+                if i + 1 < len(sys.argv):
+                    hours_window = int(sys.argv[i + 1])
+                    i += 1
             elif arg == '--help' or arg == '-h':
                 print("Usage: python api_to_database.py [OPTIONS]")
                 print("Options:")
@@ -342,6 +348,7 @@ def main():
                 print("  -c, --count NUMBER     Number of tickers to process (default: all)")
                 print("  -s, --skip-existing    Skip tickers that already have data for today")
                 print("  -b, --batch-size SIZE  Batch size for database saves (default: 10)")
+                print("  -hw, --hours-window HOURS  Hours window for filtering (default: 24)")
                 print("  -h, --help             Show this help message")
                 print("\nExamples:")
                 print("  python api_to_database.py                                    # Process all tickers")
@@ -349,6 +356,8 @@ def main():
                 print("  python api_to_database.py -s                               # Process only new tickers for today")
                 print("  python api_to_database.py -b 20                            # Process in batches of 20")
                 print("  python api_to_database.py -f stocks.txt -c 50 -s -b 15     # Process 50 new tickers in batches of 15")
+                print("  python api_to_database.py -s -hw 48                        # Process tickers without data in last 48 hours")
+                print("  python api_to_database.py -s -hw 6                         # Process tickers without data in last 6 hours")
                 return
             else:
                 # Legacy support: first argument as filename, second as count
@@ -366,7 +375,7 @@ def main():
         bridge = APIToDatabaseBridge(use_database=True)
         
         # Get ticker list from specified file in alphabetical order
-        tickers = bridge.get_tickers_from_file(filename, count, skip_existing)
+        tickers = bridge.get_tickers_from_file(filename, count, skip_existing, hours_window)
         
         if not tickers:
             print("🎯 No tickers to process!")
@@ -377,7 +386,10 @@ def main():
         print(f"🚀 Starting API to Database bridge...")
         print(f"📊 Processing {len(tickers)} tickers from {filename} in alphabetical order...")
         if skip_existing:
-            print("🔄 Skipping tickers that already have data for today")
+            if hours_window == 24:
+                print("🔄 Skipping tickers that already have data for today (last 24 hours)")
+            else:
+                print(f"🔄 Skipping tickers that already have data in last {hours_window} hours")
         print(f"🎯 First 10 tickers: {', '.join(tickers[:10])}...")
         
         # Fetch and save data

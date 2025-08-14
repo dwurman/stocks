@@ -37,7 +37,7 @@ def main():
             logger.info("⚠️ Not running in Railway environment")
         
         # Set the command to run
-        cmd = ["python", "api_to_database.py", "-b", "15"]
+        cmd = ["python", "api_to_database.py", "-b", "15", "--skip-existing", "--hours-window", "24"]
         logger.info(f"🎯 Executing command: {' '.join(cmd)}")
         
         # Execute the main script
