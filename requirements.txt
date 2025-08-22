@@ -1,7 +1,4 @@
-requests
-beautifulsoup4
-gql[requests]
-python-dotenv
-schedule
-psycopg2-binary
-yfinance 
+yfinance>=0.2.18
+psycopg2-binary>=2.9.5
+python-dotenv>=1.0.0
+curl_cffi>=0.5.0 

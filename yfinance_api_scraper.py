@@ -5,12 +5,16 @@ Simplified to only use Ticker.info data for maximum reliability
 Now supports batch processing using yf.Tickers()
 """
 
+import os
+from dotenv import load_dotenv
 import yfinance as yf
+from curl_cffi import requests
 import logging
 from datetime import datetime
-import json
-import time
 from typing import Dict, List, Optional, Any
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Configure logging
 logging.basicConfig(
@@ -19,117 +23,39 @@ logging.basicConfig(
 )
 
 class YahooFinanceAPIScraper:
-    def __init__(self):
-        """Initialize the API scraper"""
+    def __init__(self, use_scrapingbee: bool = False, scrapingbee_api_key: Optional[str] = None):
+        """Initialize the API scraper.
+
+        If use_scrapingbee is True, yfinance will use a curl_cffi session routed via ScrapingBee proxy.
+        """
         self.logger = logging.getLogger(__name__)
+        self.session: Optional[requests.Session] = None
+
+        if use_scrapingbee:
+            api_key = scrapingbee_api_key or os.getenv('SCRAPINGBEE_API_KEY')
+            if not api_key:
+                self.logger.warning("use_scrapingbee=True but SCRAPINGBEE_API_KEY not set; continuing without proxy")
+            else:
+                self.session = self._create_scrapingbee_session(api_key)
+
+    def _create_scrapingbee_session(self, api_key: str) -> requests.Session:
+        """Create a curl_cffi session configured to use ScrapingBee proxy for all HTTP/HTTPS."""
+        session = requests.Session()
+        # ScrapingBee standard proxy endpoint
+        proxy_host = os.getenv('SCRAPINGBEE_PROXY_HOST', 'proxy.scrapingbee.com')
+        proxy_port = os.getenv('SCRAPINGBEE_PROXY_PORT', '8886')
+        proxy_auth_user = os.getenv('SCRAPINGBEE_PROXY_USER', 'scrapingbee')
+        proxy_url = f"http://{proxy_auth_user}:{api_key}@{proxy_host}:{proxy_port}"
+        session.proxies.update({
+            'http': proxy_url,
+            'https': proxy_url,
+        })
+        # Reasonable timeouts and headers on the session
+        session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (compatible; yahoof-scraper/1.0)'
+        })
+        return session
         
-    def get_ticker_info(self, ticker: str) -> Optional[Dict[str, Any]]:
-        """Get comprehensive ticker information using yfinance API - only Ticker.info"""
-        try:
-            self.logger.info(f"Fetching data for {ticker} via yfinance API...")
-            
-            # Create ticker object
-            ticker_obj = yf.Ticker(ticker)
-            
-            # Get basic info - this contains all the data we need
-            info = ticker_obj.info
-            
-            # Compile all data from info object
-            ticker_data = {
-                'ticker': ticker,
-                'scraped_at': datetime.now().isoformat(),
-                'data': {
-                    # Basic company information
-                    'company_name': info.get('longName', 'N/A'),
-                    'long_name': info.get('longName', 'N/A'),
-                    'short_name': info.get('shortName', 'N/A'),
-                    'sector': info.get('sector', 'N/A'),
-                    'industry': info.get('industry', 'N/A'),
-                    'website': info.get('website', 'N/A'),
-                    'business_summary': info.get('longBusinessSummary', 'N/A'),
-                    'country': info.get('country', 'N/A'),
-                    'currency': info.get('currency', 'N/A'),
-                    'exchange': info.get('exchange', 'N/A'),
-                    'quote_type': info.get('quoteType', 'N/A'),
-                    
-                    # Market data
-                    'market_cap': info.get('marketCap', 'N/A'),
-                    'enterprise_value': info.get('enterpriseValue', 'N/A'),
-                    'float_shares': info.get('floatShares', 'N/A'),
-                    'shares_outstanding': info.get('sharesOutstanding', 'N/A'),
-                    'shares_short': info.get('sharesShort', 'N/A'),
-                    'shares_short_prev_month': info.get('sharesShortPriorMonth', 'N/A'),
-                    'shares_short_prior_month': info.get('sharesShortPriorMonth', 'N/A'),
-                    
-                    # Price data
-                    'current_price': info.get('currentPrice', 'N/A'),
-                    'previous_close': info.get('previousClose', 'N/A'),
-                    'open': info.get('open', 'N/A'),
-                    'day_low': info.get('dayLow', 'N/A'),
-                    'day_high': info.get('dayHigh', 'N/A'),
-                    'fifty_two_week_low': info.get('fiftyTwoWeekLow', 'N/A'),
-                    'fifty_two_week_high': info.get('fiftyTwoWeekHigh', 'N/A'),
-                    'fifty_day_average': info.get('fiftyDayAverage', 'N/A'),
-                    'two_hundred_day_average': info.get('twoHundredDayAverage', 'N/A'),
-                    
-                    # Volume and trading
-                    'volume': info.get('volume', 'N/A'),
-                    'average_volume': info.get('averageVolume', 'N/A'),
-                    'average_volume_10days': info.get('averageVolume10days', 'N/A'),
-                    'bid': info.get('bid', 'N/A'),
-                    'ask': info.get('ask', 'N/A'),
-                    'bid_size': info.get('bidSize', 'N/A'),
-                    'ask_size': info.get('askSize', 'N/A'),
-                    
-                    # Financial ratios
-                    'trailing_pe': info.get('trailingPE', 'N/A'),
-                    'forward_pe': info.get('forwardPE', 'N/A'),
-                    'peg_ratio': info.get('pegRatio', 'N/A'),
-                    'price_to_book': info.get('priceToBook', 'N/A'),
-                    'price_to_sales_trailing_12_months': info.get('priceToSalesTrailing12Months', 'N/A'),
-                    'debt_to_equity': info.get('debtToEquity', 'N/A'),
-                    'return_on_equity': info.get('returnOnEquity', 'N/A'),
-                    'return_on_assets': info.get('returnOnAssets', 'N/A'),
-                    
-                    # Earnings and dividends
-                    'trailing_eps': info.get('trailingEps', 'N/A'),
-                    'forward_eps': info.get('forwardEps', 'N/A'),
-                    'dividend_yield': info.get('dividendYield', 'N/A'),
-                    'dividend_rate': info.get('dividendRate', 'N/A'),
-                    'payout_ratio': info.get('payoutRatio', 'N/A'),
-                    'five_year_avg_dividend_yield': info.get('fiveYearAvgDividendYield', 'N/A'),
-                    
-                    # Growth metrics
-                    'revenue_growth': info.get('revenueGrowth', 'N/A'),
-                    'earnings_growth': info.get('earningsGrowth', 'N/A'),
-                    'profit_margins': info.get('profitMargins', 'N/A'),
-                    'operating_margins': info.get('operatingMargins', 'N/A'),
-                    'ebitda_margins': info.get('ebitdaMargins', 'N/A'),
-                    
-                    # Additional metrics
-                    'beta': info.get('beta', 'N/A'),
-                    'book_value': info.get('bookValue', 'N/A'),
-                    'short_ratio': info.get('shortRatio', 'N/A'),
-                    'price_target_low': info.get('targetLowPrice', 'N/A'),
-                    'price_target_mean': info.get('targetMeanPrice', 'N/A'),
-                    'price_target_high': info.get('targetHighPrice', 'N/A'),
-                    'price_target_median': info.get('targetMedianPrice', 'N/A'),
-                    
-                    # Market status
-                    'regular_market_time': info.get('regularMarketTime', 'N/A'),
-                    'regular_market_open': info.get('regularMarketOpen', 'N/A'),
-                    'regular_market_close': info.get('regularMarketClose', 'N/A'),
-                    'regular_market_previous_close': info.get('regularMarketPreviousClose', 'N/A'),
-                }
-            }
-            
-            self.logger.info(f"Successfully fetched data for {ticker}")
-            return ticker_data
-            
-        except Exception as e:
-            self.logger.error(f"Error fetching data for {ticker}: {str(e)}")
-            return None
-    
     def get_batch_tickers_info(self, tickers: List[str], batch_size: int = 10) -> List[Dict[str, Any]]:
         """Get data for multiple tickers using yfinance batch functionality"""
         try:
@@ -146,9 +72,12 @@ class YahooFinanceAPIScraper:
                 self.logger.info(f"Processing batch {batch_num}/{total_batches}: {len(batch_tickers)} tickers")
                 
                 try:
-                    # Create batch ticker object using yf.Tickers()
+                    # Create batch ticker object using yf.Tickers(), optionally with proxy session
                     ticker_symbols = ' '.join(batch_tickers)
-                    batch_tickers_obj = yf.Tickers(ticker_symbols)
+                    if self.session:
+                        batch_tickers_obj = yf.Tickers(ticker_symbols, session=self.session)
+                    else:
+                        batch_tickers_obj = yf.Tickers(ticker_symbols)
                     
                     batch_results = []
                     for ticker in batch_tickers:
@@ -162,87 +91,216 @@ class YahooFinanceAPIScraper:
                                 'ticker': ticker,
                                 'scraped_at': datetime.now().isoformat(),
                                 'data': {
-                                    # Basic company information
-                                    'company_name': info.get('longName', 'N/A'),
-                                    'long_name': info.get('longName', 'N/A'),
-                                    'short_name': info.get('shortName', 'N/A'),
-                                    'sector': info.get('sector', 'N/A'),
-                                    'industry': info.get('industry', 'N/A'),
-                                    'website': info.get('website', 'N/A'),
-                                    'business_summary': info.get('longBusinessSummary', 'N/A'),
-                                    'country': info.get('country', 'N/A'),
-                                    'currency': info.get('currency', 'N/A'),
-                                    'exchange': info.get('exchange', 'N/A'),
-                                    'quote_type': info.get('quoteType', 'N/A'),
+                                    # Company Information
+                                    'long_name': info.get('longName'),
+                                    'short_name': info.get('shortName'),
+                                    'long_business_summary': info.get('longBusinessSummary'),
+                                    'website': info.get('website'),
+                                    'phone': info.get('phone'),
+                                    'address1': info.get('address1'),
+                                    'city': info.get('city'),
+                                    'state': info.get('state'),
+                                    'zip': info.get('zip'),
+                                    'country': info.get('country'),
+                                    'full_time_employees': info.get('fullTimeEmployees'),
+                                    'industry': info.get('industry'),
+                                    'industry_key': info.get('industryKey'),
+                                    'industry_disp': info.get('industryDisp'),
+                                    'sector': info.get('sector'),
+                                    'sector_key': info.get('sectorKey'),
+                                    'sector_disp': info.get('sectorDisp'),
+                                    'ir_website': info.get('irWebsite'),
+                                    'language': info.get('language'),
+                                    'region': info.get('region'),
+                                    'type_disp': info.get('typeDisp'),
+                                    'display_name': info.get('displayName'),
+                                    'symbol': info.get('symbol'),
                                     
-                                    # Market data
-                                    'market_cap': info.get('marketCap', 'N/A'),
-                                    'enterprise_value': info.get('enterpriseValue', 'N/A'),
-                                    'float_shares': info.get('floatShares', 'N/A'),
-                                    'shares_outstanding': info.get('sharesOutstanding', 'N/A'),
-                                    'shares_short': info.get('sharesShort', 'N/A'),
-                                    'shares_short_prev_month': info.get('sharesShortPriorMonth', 'N/A'),
-                                    'shares_short_prior_month': info.get('sharesShortPriorMonth', 'N/A'),
+                                    # Market Data
+                                    'market_cap': info.get('marketCap'),
+                                    'enterprise_value': info.get('enterpriseValue'),
+                                    'current_price': info.get('currentPrice'),
+                                    'regular_market_price': info.get('regularMarketPrice'),
+                                    'previous_close': info.get('previousClose'),
+                                    'open': info.get('open'),
+                                    'day_low': info.get('dayLow'),
+                                    'day_high': info.get('dayHigh'),
+                                    'regular_market_open': info.get('regularMarketOpen'),
+                                    'regular_market_day_low': info.get('regularMarketDayLow'),
+                                    'regular_market_day_high': info.get('regularMarketDayHigh'),
+                                    'regular_market_previous_close': info.get('regularMarketPreviousClose'),
+                                    'regular_market_change': info.get('regularMarketChange'),
+                                    'regular_market_change_percent': info.get('regularMarketChangePercent'),
+                                    'regular_market_day_range': info.get('regularMarketDayRange'),
+                                    'regular_market_time': info.get('regularMarketTime'),
+                                    'regular_market_volume': info.get('regularMarketVolume'),
+                                    'volume': info.get('volume'),
+                                    'average_volume': info.get('averageVolume'),
+                                    'average_volume_10days': info.get('averageVolume10days'),
+                                    'average_daily_volume_10_day': info.get('averageDailyVolume10Day'),
+                                    'average_daily_volume_3_month': info.get('averageDailyVolume3Month'),
                                     
-                                    # Price data
-                                    'current_price': info.get('currentPrice', 'N/A'),
-                                    'previous_close': info.get('previousClose', 'N/A'),
-                                    'open': info.get('open', 'N/A'),
-                                    'day_low': info.get('dayLow', 'N/A'),
-                                    'day_high': info.get('dayHigh', 'N/A'),
-                                    'fifty_two_week_low': info.get('fiftyTwoWeekLow', 'N/A'),
-                                    'fifty_two_week_high': info.get('fiftyTwoWeekHigh', 'N/A'),
-                                    'fifty_day_average': info.get('fiftyDayAverage', 'N/A'),
-                                    'two_hundred_day_average': info.get('twoHundredDayAverage', 'N/A'),
+                                    # Price Data
+                                    'price_hint': info.get('priceHint'),
+                                    'fifty_two_week_low': info.get('fiftyTwoWeekLow'),
+                                    'fifty_two_week_high': info.get('fiftyTwoWeekHigh'),
+                                    'fifty_two_week_low_change': info.get('fiftyTwoWeekLowChange'),
+                                    'fifty_two_week_low_change_percent': info.get('fiftyTwoWeekLowChangePercent'),
+                                    'fifty_two_week_high_change': info.get('fiftyTwoWeekHighChange'),
+                                    'fifty_two_week_high_change_percent': info.get('fiftyTwoWeekHighChangePercent'),
+                                    'fifty_two_week_range': info.get('fiftyTwoWeekRange'),
+                                    'fifty_two_week_change_percent': info.get('fiftyTwoWeekChangePercent'),
+                                    'fifty_day_average': info.get('fiftyDayAverage'),
+                                    'fifty_day_average_change': info.get('fiftyDayAverageChange'),
+                                    'fifty_day_average_change_percent': info.get('fiftyDayAverageChangePercent'),
+                                    'two_hundred_day_average': info.get('twoHundredDayAverage'),
+                                    'two_hundred_day_average_change': info.get('twoHundredDayAverageChange'),
+                                    'two_hundred_day_average_change_percent': info.get('twoHundredDayAverageChangePercent'),
+                                    'sandp_52_week_change': info.get('SandP52WeekChange'),
                                     
-                                    # Volume and trading
-                                    'volume': info.get('volume', 'N/A'),
-                                    'average_volume': info.get('averageVolume', 'N/A'),
-                                    'average_volume_10days': info.get('averageVolume10days', 'N/A'),
-                                    'bid': info.get('bid', 'N/A'),
-                                    'ask': info.get('ask', 'N/A'),
-                                    'bid_size': info.get('bidSize', 'N/A'),
-                                    'ask_size': info.get('askSize', 'N/A'),
+                                    # Trading Information
+                                    'bid': info.get('bid'),
+                                    'ask': info.get('ask'),
+                                    'bid_size': info.get('bidSize'),
+                                    'ask_size': info.get('askSize'),
+                                    'tradeable': info.get('tradeable'),
+                                    'triggerable': info.get('triggerable'),
+                                    'has_pre_post_market_data': info.get('hasPrePostMarketData'),
+                                    'pre_market_price': info.get('preMarketPrice'),
+                                    'pre_market_change': info.get('preMarketChange'),
+                                    'pre_market_change_percent': info.get('preMarketChangePercent'),
+                                    'pre_market_time': info.get('preMarketTime'),
+                                    'market_state': info.get('marketState'),
+                                    'exchange': info.get('exchange'),
+                                    'full_exchange_name': info.get('fullExchangeName'),
+                                    'quote_source_name': info.get('quoteSourceName'),
+                                    'exchange_timezone_name': info.get('exchangeTimezoneName'),
+                                    'exchange_timezone_short_name': info.get('exchangeTimezoneShortName'),
+                                    'gmt_offset_milliseconds': info.get('gmtOffSetMilliseconds'),
+                                    'market': info.get('market'),
+                                    'first_trade_date_milliseconds': info.get('firstTradeDateMilliseconds'),
+                                    'source_interval': info.get('sourceInterval'),
+                                    'exchange_data_delayed_by': info.get('exchangeDataDelayedBy'),
                                     
-                                    # Financial ratios
-                                    'trailing_pe': info.get('trailingPE', 'N/A'),
-                                    'forward_pe': info.get('forwardPE', 'N/A'),
-                                    'peg_ratio': info.get('pegRatio', 'N/A'),
-                                    'price_to_book': info.get('priceToBook', 'N/A'),
-                                    'price_to_sales_trailing_12_months': info.get('priceToSalesTrailing12Months', 'N/A'),
-                                    'debt_to_equity': info.get('debtToEquity', 'N/A'),
-                                    'return_on_equity': info.get('returnOnEquity', 'N/A'),
-                                    'return_on_assets': info.get('returnOnAssets', 'N/A'),
+                                    # Financial Ratios
+                                    'trailing_pe': info.get('trailingPE'),
+                                    'forward_pe': info.get('forwardPE'),
+                                    'price_to_book': info.get('priceToBook'),
+                                    'price_to_sales_trailing_12_months': info.get('priceToSalesTrailing12Months'),
+                                    'enterprise_to_revenue': info.get('enterpriseToRevenue'),
+                                    'enterprise_to_ebitda': info.get('enterpriseToEbitda'),
+                                    'trailing_peg_ratio': info.get('trailingPegRatio'),
+                                    'price_eps_current_year': info.get('priceEpsCurrentYear'),
+                                    'eps_trailing_twelve_months': info.get('epsTrailingTwelveMonths'),
+                                    'eps_forward': info.get('epsForward'),
+                                    'eps_current_year': info.get('epsCurrentYear'),
                                     
-                                    # Earnings and dividends
-                                    'trailing_eps': info.get('trailingEps', 'N/A'),
-                                    'forward_eps': info.get('forwardEps', 'N/A'),
-                                    'dividend_yield': info.get('dividendYield', 'N/A'),
-                                    'dividend_rate': info.get('dividendRate', 'N/A'),
-                                    'payout_ratio': info.get('payoutRatio', 'N/A'),
-                                    'five_year_avg_dividend_yield': info.get('fiveYearAvgDividendYield', 'N/A'),
+                                    # Dividend Information
+                                    'dividend_rate': info.get('dividendRate'),
+                                    'dividend_yield': info.get('dividendYield'),
+                                    'trailing_annual_dividend_rate': info.get('trailingAnnualDividendRate'),
+                                    'trailing_annual_dividend_yield': info.get('trailingAnnualDividendYield'),
+                                    'five_year_avg_dividend_yield': info.get('fiveYearAvgDividendYield'),
+                                    'payout_ratio': info.get('payoutRatio'),
+                                    'last_dividend_value': info.get('lastDividendValue'),
+                                    'last_dividend_date': info.get('lastDividendDate'),
+                                    'ex_dividend_date': info.get('exDividendDate'),
+                                    'dividend_date': info.get('dividendDate'),
                                     
-                                    # Growth metrics
-                                    'revenue_growth': info.get('revenueGrowth', 'N/A'),
-                                    'earnings_growth': info.get('earningsGrowth', 'N/A'),
-                                    'profit_margins': info.get('profitMargins', 'N/A'),
-                                    'operating_margins': info.get('operatingMargins', 'N/A'),
-                                    'ebitda_margins': info.get('ebitdaMargins', 'N/A'),
+                                    # Shares Information
+                                    'shares_outstanding': info.get('sharesOutstanding'),
+                                    'float_shares': info.get('floatShares'),
+                                    'shares_short': info.get('sharesShort'),
+                                    'shares_short_prior_month': info.get('sharesShortPriorMonth'),
+                                    'shares_short_previous_month_date': info.get('sharesShortPreviousMonthDate'),
+                                    'date_short_interest': info.get('dateShortInterest'),
+                                    'shares_percent_shares_out': info.get('sharesPercentSharesOut'),
+                                    'held_percent_insiders': info.get('heldPercentInsiders'),
+                                    'held_percent_institutions': info.get('heldPercentInstitutions'),
+                                    'short_ratio': info.get('shortRatio'),
+                                    'short_percent_of_float': info.get('shortPercentOfFloat'),
+                                    'implied_shares_outstanding': info.get('impliedSharesOutstanding'),
                                     
-                                    # Additional metrics
-                                    'beta': info.get('beta', 'N/A'),
-                                    'book_value': info.get('bookValue', 'N/A'),
-                                    'short_ratio': info.get('shortRatio', 'N/A'),
-                                    'price_target_low': info.get('targetLowPrice', 'N/A'),
-                                    'price_target_mean': info.get('targetMeanPrice', 'N/A'),
-                                    'price_target_high': info.get('targetHighPrice', 'N/A'),
-                                    'price_target_median': info.get('targetMedianPrice', 'N/A'),
+                                    # Financial Metrics
+                                    'beta': info.get('beta'),
+                                    'book_value': info.get('bookValue'),
+                                    'total_cash': info.get('totalCash'),
+                                    'total_cash_per_share': info.get('totalCashPerShare'),
+                                    'total_debt': info.get('totalDebt'),
+                                    'total_revenue': info.get('totalRevenue'),
+                                    'net_income_to_common': info.get('netIncomeToCommon'),
+                                    'gross_profits': info.get('grossProfits'),
+                                    'ebitda': info.get('ebitda'),
+                                    'free_cashflow': info.get('freeCashflow'),
+                                    'operating_cashflow': info.get('operatingCashflow'),
+                                    'revenue_per_share': info.get('revenuePerShare'),
                                     
-                                    # Market status
-                                    'regular_market_time': info.get('regularMarketTime', 'N/A'),
-                                    'regular_market_open': info.get('regularMarketOpen', 'N/A'),
-                                    'regular_market_close': info.get('regularMarketClose', 'N/A'),
-                                    'regular_market_previous_close': info.get('regularMarketPreviousClose', 'N/A'),
+                                    # Growth and Margins
+                                    'earnings_growth': info.get('earningsGrowth'),
+                                    'revenue_growth': info.get('revenueGrowth'),
+                                    'earnings_quarterly_growth': info.get('earningsQuarterlyGrowth'),
+                                    'gross_margins': info.get('grossMargins'),
+                                    'profit_margins': info.get('profitMargins'),
+                                    'operating_margins': info.get('operatingMargins'),
+                                    'ebitda_margins': info.get('ebitdaMargins'),
+                                    
+                                    # Financial Health
+                                    'debt_to_equity': info.get('debtToEquity'),
+                                    'return_on_assets': info.get('returnOnAssets'),
+                                    'return_on_equity': info.get('returnOnEquity'),
+                                    'quick_ratio': info.get('quickRatio'),
+                                    'current_ratio': info.get('currentRatio'),
+                                    
+                                    # Analyst Recommendations
+                                    'target_high_price': info.get('targetHighPrice'),
+                                    'target_low_price': info.get('targetLowPrice'),
+                                    'target_mean_price': info.get('targetMeanPrice'),
+                                    'target_median_price': info.get('targetMedianPrice'),
+                                    'recommendation_mean': info.get('recommendationMean'),
+                                    'recommendation_key': info.get('recommendationKey'),
+                                    'average_analyst_rating': info.get('averageAnalystRating'),
+                                    'number_of_analyst_opinions': info.get('numberOfAnalystOpinions'),
+                                    
+                                    # Risk Metrics
+                                    'audit_risk': info.get('auditRisk'),
+                                    'board_risk': info.get('boardRisk'),
+                                    'compensation_risk': info.get('compensationRisk'),
+                                    'share_holder_rights_risk': info.get('shareHolderRightsRisk'),
+                                    'overall_risk': info.get('overallRisk'),
+                                    
+                                    # Dates and Timestamps
+                                    'governance_epoch_date': info.get('governanceEpochDate'),
+                                    'compensation_as_of_epoch_date': info.get('compensationAsOfEpochDate'),
+                                    'last_fiscal_year_end': info.get('lastFiscalYearEnd'),
+                                    'next_fiscal_year_end': info.get('nextFiscalYearEnd'),
+                                    'most_recent_quarter': info.get('mostRecentQuarter'),
+                                    'earnings_timestamp': info.get('earningsTimestamp'),
+                                    'earnings_timestamp_start': info.get('earningsTimestampStart'),
+                                    'earnings_timestamp_end': info.get('earningsTimestampEnd'),
+                                    'earnings_call_timestamp_start': info.get('earningsCallTimestampStart'),
+                                    'earnings_call_timestamp_end': info.get('earningsCallTimestampEnd'),
+                                    'is_earnings_date_estimate': info.get('isEarningsDateEstimate'),
+                                    
+                                    # Additional Fields
+                                    'currency': info.get('currency'),
+                                    'financial_currency': info.get('financialCurrency'),
+                                    'quote_type': info.get('quoteType'),
+                                    'message_board_id': info.get('messageBoardId'),
+                                    'corporate_actions': info.get('corporateActions'),
+                                    'executive_team': info.get('executiveTeam'),
+                                    'company_officers': info.get('companyOfficers'),
+                                    'custom_price_alert_confidence': info.get('customPriceAlertConfidence'),
+                                    'esg_populated': info.get('esgPopulated'),
+                                    'cryptoTradeable': info.get('cryptoTradeable'),
+                                    'max_age': info.get('maxAge'),
+                                    
+                                    # Additional fields that might exist
+                                    'last_split_factor': info.get('lastSplitFactor'),
+                                    'last_split_date': info.get('lastSplitDate'),
+                                    'ir_website': info.get('irWebsite'),
+                                    'corporate_actions': info.get('corporateActions'),
+                                    'executive_team': info.get('executiveTeam'),
+                                    'company_officers': info.get('companyOfficers'),
                                 }
                             }
                             
@@ -262,7 +320,7 @@ class YahooFinanceAPIScraper:
                     self.logger.info(f"Falling back to individual ticker fetching for batch {batch_num}")
                     for ticker in batch_tickers:
                         try:
-                            ticker_data = self.get_ticker_info(ticker)
+                            ticker_data = self._get_single_ticker_info(ticker)
                             if ticker_data:
                                 all_results.append(ticker_data)
                         except Exception as fallback_error:
@@ -276,103 +334,238 @@ class YahooFinanceAPIScraper:
             self.logger.error(f"Error in batch processing: {str(e)}")
             return []
     
-    def get_multiple_tickers(self, tickers: List[str], delay: float = 0.1) -> List[Dict[str, Any]]:
-        """Get data for multiple tickers with rate limiting (legacy method)"""
-        results = []
-        
-        for i, ticker in enumerate(tickers):
-            try:
-                self.logger.info(f"Processing {i+1}/{len(tickers)}: {ticker}")
-                
-                ticker_data = self.get_ticker_info(ticker)
-                if ticker_data:
-                    results.append(ticker_data)
-                
-                # Rate limiting to be respectful to the API
-                if i < len(tickers) - 1:  # Don't sleep after the last ticker
-                    time.sleep(delay)
-                    
-            except Exception as e:
-                self.logger.error(f"Error processing {ticker}: {e}")
-                continue
-        
-        self.logger.info(f"Successfully processed {len(results)} out of {len(tickers)} tickers")
-        return results
-    
-    def save_to_json(self, data: List[Dict[str, Any]], filename: str = None) -> str:
-        """Save data to JSON file"""
-        if not filename:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            filename = f"yfinance_data_{timestamp}.json"
-        
+    def _get_single_ticker_info(self, ticker: str) -> Optional[Dict[str, Any]]:
+        """Get data for a single ticker (fallback method)"""
         try:
-            with open(filename, 'w') as f:
-                json.dump(data, f, indent=2, default=str)
+            self.logger.info(f"Fetching data for {ticker} via yfinance API...")
             
-            self.logger.info(f"Data saved to {filename}")
-            return filename
+            # Create ticker object
+            if self.session:
+                ticker_obj = yf.Ticker(ticker, session=self.session)
+            else:
+                ticker_obj = yf.Ticker(ticker)
+            
+            # Get basic info - this contains all the data we need
+            info = ticker_obj.info
+            
+            # Compile all data from info object using the same comprehensive structure
+            ticker_data = {
+                'ticker': ticker,
+                'scraped_at': datetime.now().isoformat(),
+                'data': {
+                    # Company Information
+                    'long_name': info.get('longName'),
+                    'short_name': info.get('shortName'),
+                    'long_business_summary': info.get('longBusinessSummary'),
+                    'website': info.get('website'),
+                    'phone': info.get('phone'),
+                    'address1': info.get('address1'),
+                    'city': info.get('city'),
+                    'state': info.get('state'),
+                    'zip': info.get('zip'),
+                    'country': info.get('country'),
+                    'full_time_employees': info.get('fullTimeEmployees'),
+                    'industry': info.get('industry'),
+                    'industry_key': info.get('industryKey'),
+                    'industry_disp': info.get('industryDisp'),
+                    'sector': info.get('sector'),
+                    'sector_key': info.get('sectorKey'),
+                    'sector_disp': info.get('sectorDisp'),
+                    'ir_website': info.get('irWebsite'),
+                    'language': info.get('language'),
+                    'region': info.get('region'),
+                    'type_disp': info.get('typeDisp'),
+                    'display_name': info.get('displayName'),
+                    'symbol': info.get('symbol'),
+                    
+                    # Market Data
+                    'market_cap': info.get('marketCap'),
+                    'enterprise_value': info.get('enterpriseValue'),
+                    'current_price': info.get('currentPrice'),
+                    'regular_market_price': info.get('regularMarketPrice'),
+                    'previous_close': info.get('previousClose'),
+                    'open': info.get('open'),
+                    'day_low': info.get('dayLow'),
+                    'day_high': info.get('dayHigh'),
+                    'regular_market_open': info.get('regularMarketOpen'),
+                    'regular_market_day_low': info.get('regularMarketDayLow'),
+                    'regular_market_day_high': info.get('regularMarketDayHigh'),
+                    'regular_market_previous_close': info.get('regularMarketPreviousClose'),
+                    'regular_market_change': info.get('regularMarketChange'),
+                    'regular_market_change_percent': info.get('regularMarketChangePercent'),
+                    'regular_market_day_range': info.get('regularMarketDayRange'),
+                    'regular_market_time': info.get('regularMarketTime'),
+                    'regular_market_volume': info.get('regularMarketVolume'),
+                    'volume': info.get('volume'),
+                    'average_volume': info.get('averageVolume'),
+                    'average_volume_10days': info.get('averageVolume10days'),
+                    'average_daily_volume_10_day': info.get('averageDailyVolume10Day'),
+                    'average_daily_volume_3_month': info.get('averageDailyVolume3Month'),
+                    
+                    # Price Data
+                    'price_hint': info.get('priceHint'),
+                    'fifty_two_week_low': info.get('fiftyTwoWeekLow'),
+                    'fifty_two_week_high': info.get('fiftyTwoWeekHigh'),
+                    'fifty_two_week_low_change': info.get('fiftyTwoWeekLowChange'),
+                    'fifty_two_week_low_change_percent': info.get('fiftyTwoWeekLowChangePercent'),
+                    'fifty_two_week_high_change': info.get('fiftyTwoWeekHighChange'),
+                    'fifty_two_week_high_change_percent': info.get('fiftyTwoWeekHighChangePercent'),
+                    'fifty_two_week_range': info.get('fiftyTwoWeekRange'),
+                    'fifty_two_week_change_percent': info.get('fiftyTwoWeekChangePercent'),
+                    'fifty_day_average': info.get('fiftyDayAverage'),
+                    'fifty_day_average_change': info.get('fiftyDayAverageChange'),
+                    'fifty_day_average_change_percent': info.get('fiftyDayAverageChangePercent'),
+                    'two_hundred_day_average': info.get('twoHundredDayAverage'),
+                    'two_hundred_day_average_change': info.get('twoHundredDayAverageChange'),
+                    'two_hundred_day_average_change_percent': info.get('twoHundredDayAverageChangePercent'),
+                    'sandp_52_week_change': info.get('SandP52WeekChange'),
+                    
+                    # Trading Information
+                    'bid': info.get('bid'),
+                    'ask': info.get('ask'),
+                    'bid_size': info.get('bidSize'),
+                    'ask_size': info.get('askSize'),
+                    'tradeable': info.get('tradeable'),
+                    'triggerable': info.get('triggerable'),
+                    'has_pre_post_market_data': info.get('hasPrePostMarketData'),
+                    'pre_market_price': info.get('preMarketPrice'),
+                    'pre_market_change': info.get('preMarketChange'),
+                    'pre_market_change_percent': info.get('preMarketChangePercent'),
+                    'pre_market_time': info.get('preMarketTime'),
+                    'market_state': info.get('marketState'),
+                    'exchange': info.get('exchange'),
+                    'full_exchange_name': info.get('fullExchangeName'),
+                    'quote_source_name': info.get('quoteSourceName'),
+                    'exchange_timezone_name': info.get('exchangeTimezoneName'),
+                    'exchange_timezone_short_name': info.get('exchangeTimezoneShortName'),
+                    'gmt_offset_milliseconds': info.get('gmtOffSetMilliseconds'),
+                    'market': info.get('market'),
+                    'first_trade_date_milliseconds': info.get('firstTradeDateMilliseconds'),
+                    'source_interval': info.get('sourceInterval'),
+                    'exchange_data_delayed_by': info.get('exchangeDataDelayedBy'),
+                    
+                    # Financial Ratios
+                    'trailing_pe': info.get('trailingPE'),
+                    'forward_pe': info.get('forwardPE'),
+                    'price_to_book': info.get('priceToBook'),
+                    'price_to_sales_trailing_12_months': info.get('priceToSalesTrailing12Months'),
+                    'enterprise_to_revenue': info.get('enterpriseToRevenue'),
+                    'enterprise_to_ebitda': info.get('enterpriseToEbitda'),
+                    'trailing_peg_ratio': info.get('trailingPegRatio'),
+                    'price_eps_current_year': info.get('priceEpsCurrentYear'),
+                    'eps_trailing_twelve_months': info.get('epsTrailingTwelveMonths'),
+                    'eps_forward': info.get('epsForward'),
+                    'eps_current_year': info.get('epsCurrentYear'),
+                    
+                    # Dividend Information
+                    'dividend_rate': info.get('dividendRate'),
+                    'dividend_yield': info.get('dividendYield'),
+                    'trailing_annual_dividend_rate': info.get('trailingAnnualDividendRate'),
+                    'trailing_annual_dividend_yield': info.get('trailingAnnualDividendYield'),
+                    'five_year_avg_dividend_yield': info.get('fiveYearAvgDividendYield'),
+                    'payout_ratio': info.get('payoutRatio'),
+                    'last_dividend_value': info.get('lastDividendValue'),
+                    'last_dividend_date': info.get('lastDividendDate'),
+                    'ex_dividend_date': info.get('exDividendDate'),
+                    'dividend_date': info.get('dividendDate'),
+                    
+                    # Shares Information
+                    'shares_outstanding': info.get('sharesOutstanding'),
+                    'float_shares': info.get('floatShares'),
+                    'shares_short': info.get('sharesShort'),
+                    'shares_short_prior_month': info.get('sharesShortPriorMonth'),
+                    'shares_short_previous_month_date': info.get('sharesShortPreviousMonthDate'),
+                    'date_short_interest': info.get('dateShortInterest'),
+                    'shares_percent_shares_out': info.get('sharesPercentSharesOut'),
+                    'held_percent_insiders': info.get('heldPercentInsiders'),
+                    'held_percent_institutions': info.get('heldPercentInstitutions'),
+                    'short_ratio': info.get('shortRatio'),
+                    'short_percent_of_float': info.get('shortPercentOfFloat'),
+                    'implied_shares_outstanding': info.get('impliedSharesOutstanding'),
+                    
+                    # Financial Metrics
+                    'beta': info.get('beta'),
+                    'book_value': info.get('bookValue'),
+                    'total_cash': info.get('totalCash'),
+                    'total_cash_per_share': info.get('totalCashPerShare'),
+                    'total_debt': info.get('totalDebt'),
+                    'total_revenue': info.get('totalRevenue'),
+                    'net_income_to_common': info.get('netIncomeToCommon'),
+                    'gross_profits': info.get('grossProfits'),
+                    'ebitda': info.get('ebitda'),
+                    'free_cashflow': info.get('freeCashflow'),
+                    'operating_cashflow': info.get('operatingCashflow'),
+                    'revenue_per_share': info.get('revenuePerShare'),
+                    
+                    # Growth and Margins
+                    'earnings_growth': info.get('earningsGrowth'),
+                    'revenue_growth': info.get('revenueGrowth'),
+                    'earnings_quarterly_growth': info.get('earningsQuarterlyGrowth'),
+                    'gross_margins': info.get('grossMargins'),
+                    'profit_margins': info.get('profitMargins'),
+                    'operating_margins': info.get('operatingMargins'),
+                    'ebitda_margins': info.get('ebitdaMargins'),
+                    
+                    # Financial Health
+                    'debt_to_equity': info.get('debtToEquity'),
+                    'return_on_assets': info.get('returnOnAssets'),
+                    'return_on_equity': info.get('returnOnEquity'),
+                    'quick_ratio': info.get('quickRatio'),
+                    'current_ratio': info.get('currentRatio'),
+                    
+                    # Analyst Recommendations
+                    'target_high_price': info.get('targetHighPrice'),
+                    'target_low_price': info.get('targetLowPrice'),
+                    'target_mean_price': info.get('targetMeanPrice'),
+                    'target_median_price': info.get('targetMedianPrice'),
+                    'recommendation_mean': info.get('recommendationMean'),
+                    'recommendation_key': info.get('recommendationKey'),
+                    'average_analyst_rating': info.get('averageAnalystRating'),
+                    'number_of_analyst_opinions': info.get('numberOfAnalystOpinions'),
+                    
+                    # Risk Metrics
+                    'audit_risk': info.get('auditRisk'),
+                    'board_risk': info.get('boardRisk'),
+                    'compensation_risk': info.get('compensationRisk'),
+                    'share_holder_rights_risk': info.get('shareHolderRightsRisk'),
+                    'overall_risk': info.get('overallRisk'),
+                    
+                    # Dates and Timestamps
+                    'governance_epoch_date': info.get('governanceEpochDate'),
+                    'compensation_as_of_epoch_date': info.get('compensationAsOfEpochDate'),
+                    'last_fiscal_year_end': info.get('lastFiscalYearEnd'),
+                    'next_fiscal_year_end': info.get('nextFiscalYearEnd'),
+                    'most_recent_quarter': info.get('mostRecentQuarter'),
+                    'earnings_timestamp': info.get('earningsTimestamp'),
+                    'earnings_timestamp_start': info.get('earningsTimestampStart'),
+                    'earnings_timestamp_end': info.get('earningsTimestampEnd'),
+                    'earnings_call_timestamp_start': info.get('earningsCallTimestampStart'),
+                    'earnings_call_timestamp_end': info.get('earningsCallTimestampEnd'),
+                    'is_earnings_date_estimate': info.get('isEarningsDateEstimate'),
+                    
+                    # Additional Fields
+                    'currency': info.get('currency'),
+                    'financial_currency': info.get('financialCurrency'),
+                    'quote_type': info.get('quoteType'),
+                    'message_board_id': info.get('messageBoardId'),
+                    'corporate_actions': info.get('corporateActions'),
+                    'executive_team': info.get('executiveTeam'),
+                    'company_officers': info.get('companyOfficers'),
+                    'custom_price_alert_confidence': info.get('customPriceAlertConfidence'),
+                    'esg_populated': info.get('esgPopulated'),
+                    'cryptoTradeable': info.get('cryptoTradeable'),
+                    'max_age': info.get('maxAge'),
+                    
+                    # Additional fields that might exist
+                    'last_split_factor': info.get('lastSplitFactor'),
+                    'last_split_date': info.get('lastSplitDate'),
+                    'ir_website': info.get('irWebsite'),
+                }
+            }
+            
+            self.logger.info(f"Successfully fetched data for {ticker}")
+            return ticker_data
             
         except Exception as e:
-            self.logger.error(f"Error saving to JSON: {e}")
+            self.logger.error(f"Error fetching data for {ticker}: {str(e)}")
             return None
-    
-    def display_summary(self, data: List[Dict[str, Any]]) -> None:
-        """Display a summary of the fetched data"""
-        if not data:
-            print("No data to display")
-            return
-        
-        print(f"\n{'='*80}")
-        print(f"YAHOO FINANCE API DATA SUMMARY")
-        print(f"{'='*80}")
-        print(f"Total tickers processed: {len(data)}")
-        print(f"Data fetched at: {data[0]['scraped_at']}")
-        
-        for ticker_data in data[:5]:  # Show first 5 tickers
-            ticker = ticker_data['ticker']
-            info = ticker_data['data']
-            
-            print(f"\n{ticker}: {info.get('company_name', 'N/A')}")
-            print(f"  Sector: {info.get('sector', 'N/A')}")
-            print(f"  Current Price: ${info.get('current_price', 'N/A')}")
-            print(f"  Market Cap: {info.get('market_cap', 'N/A')}")
-            print(f"  PE Ratio: {info.get('trailing_pe', 'N/A')}")
-            print(f"  Volume: {info.get('volume', 'N/A'):,}" if info.get('volume') else "  Volume: N/A")
-        
-        if len(data) > 5:
-            print(f"\n... and {len(data) - 5} more tickers")
-
-def main():
-    """Main function to demonstrate the API scraper"""
-    try:
-        # Initialize the scraper
-        scraper = YahooFinanceAPIScraper()
-        
-        # Test with a few tickers
-        test_tickers = ['AAPL', 'MSFT', 'GOOGL', 'TSLA', 'NVDA']
-        
-        print("🚀 Starting Yahoo Finance API scraper...")
-        print(f"📊 Fetching data for {len(test_tickers)} tickers...")
-        
-        # Test batch functionality
-        print("\n🔄 Testing batch functionality...")
-        batch_data = scraper.get_batch_tickers_info(test_tickers, batch_size=3)
-        
-        if batch_data:
-            # Display summary
-            scraper.display_summary(batch_data)
-            
-            # Save to file
-            filename = scraper.save_to_json(batch_data)
-            if filename:
-                print(f"\n✅ Data saved to: {filename}")
-            
-            print(f"\n🎉 Successfully processed {len(batch_data)} tickers using batch mode!")
-        else:
-            print("❌ No data was fetched")
-            
-    except Exception as e:
-        logging.error(f"Error in main: {e}")
-
-if __name__ == "__main__":
-    main()
