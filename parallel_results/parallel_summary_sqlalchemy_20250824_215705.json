@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-08-24T21:57:05.279028",
+  "num_processes": 10,
+  "batch_size": 10,
+  "tickers": 5000,
+  "batches": 500,
+  "total_fetched": 4667,
+  "total_saved": 4497,
+  "failed_batches": 47,
+  "duration_sec": 10643.57,
+  "per_worker": [
+    {
+      "worker_id": 0,
+      "batches": 50,
+      "total_fetched": 498,
+      "total_saved": 468,
+      "failed_batches": 3,
+      "duration_sec": 10483.1
+    },
+    {
+      "worker_id": 1,
+      "batches": 50,
+      "total_fetched": 499,
+      "total_saved": 499,
+      "failed_batches": 0,
+      "duration_sec": 10616.25
+    },
+    {
+      "worker_id": 2,
+      "batches": 50,
+      "total_fetched": 498,
+      "total_saved": 468,
+      "failed_batches": 3,
+      "duration_sec": 10453.46
+    },
+    {
+      "worker_id": 3,
+      "batches": 50,
+      "total_fetched": 473,
+      "total_saved": 453,
+      "failed_batches": 4,
+      "duration_sec": 10485.39
+    },
+    {
+      "worker_id": 4,
+      "batches": 50,
+      "total_fetched": 421,
+      "total_saved": 401,
+      "failed_batches": 9,
+      "duration_sec": 10385.89
+    },
+    {
+      "worker_id": 5,
+      "batches": 50,
+      "total_fetched": 406,
+      "total_saved": 406,
+      "failed_batches": 9,
+      "duration_sec": 10406.77
+    },
+    {
+      "worker_id": 6,
+      "batches": 50,
+      "total_fetched": 376,
+      "total_saved": 366,
+      "failed_batches": 13,
+      "duration_sec": 10342.57
+    },
+    {
+      "worker_id": 7,
+      "batches": 50,
+      "total_fetched": 498,
+      "total_saved": 488,
+      "failed_batches": 1,
+      "duration_sec": 10636.41
+    },
+    {
+      "worker_id": 8,
+      "batches": 50,
+      "total_fetched": 498,
+      "total_saved": 468,
+      "failed_batches": 3,
+      "duration_sec": 10545.09
+    },
+    {
+      "worker_id": 9,
+      "batches": 50,
+      "total_fetched": 500,
+      "total_saved": 480,
+      "failed_batches": 2,
+      "duration_sec": 10580.7
+    }
+  ],
+  "database": "sqlalchemy"
+}

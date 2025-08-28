@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-08-22T16:42:10.863401",
+  "num_processes": 10,
+  "batch_size": 10,
+  "tickers": 5000,
+  "batches": 500,
+  "total_fetched": 1774,
+  "total_saved": 1724,
+  "failed_batches": 327,
+  "duration_sec": 532.29,
+  "per_worker": [
+    {
+      "worker_id": 0,
+      "batches": 50,
+      "total_fetched": 190,
+      "total_saved": 190,
+      "failed_batches": 31,
+      "duration_sec": 512.6
+    },
+    {
+      "worker_id": 1,
+      "batches": 50,
+      "total_fetched": 188,
+      "total_saved": 188,
+      "failed_batches": 31,
+      "duration_sec": 507.77
+    },
+    {
+      "worker_id": 2,
+      "batches": 50,
+      "total_fetched": 188,
+      "total_saved": 188,
+      "failed_batches": 31,
+      "duration_sec": 507.65
+    },
+    {
+      "worker_id": 3,
+      "batches": 50,
+      "total_fetched": 200,
+      "total_saved": 180,
+      "failed_batches": 32,
+      "duration_sec": 510.16
+    },
+    {
+      "worker_id": 4,
+      "batches": 50,
+      "total_fetched": 180,
+      "total_saved": 180,
+      "failed_batches": 32,
+      "duration_sec": 511.39
+    },
+    {
+      "worker_id": 5,
+      "batches": 50,
+      "total_fetched": 170,
+      "total_saved": 170,
+      "failed_batches": 33,
+      "duration_sec": 514.59
+    },
+    {
+      "worker_id": 6,
+      "batches": 50,
+      "total_fetched": 160,
+      "total_saved": 160,
+      "failed_batches": 34,
+      "duration_sec": 523.48
+    },
+    {
+      "worker_id": 7,
+      "batches": 50,
+      "total_fetched": 160,
+      "total_saved": 160,
+      "failed_batches": 34,
+      "duration_sec": 506.7
+    },
+    {
+      "worker_id": 8,
+      "batches": 50,
+      "total_fetched": 170,
+      "total_saved": 150,
+      "failed_batches": 35,
+      "duration_sec": 503.6
+    },
+    {
+      "worker_id": 9,
+      "batches": 50,
+      "total_fetched": 168,
+      "total_saved": 158,
+      "failed_batches": 34,
+      "duration_sec": 525.72
+    }
+  ],
+  "database": "sqlalchemy"
+}

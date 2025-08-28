@@ -1,0 +1,22 @@
+{
+  "timestamp": "2025-08-21T22:45:45.119584",
+  "num_processes": 1,
+  "batch_size": 3,
+  "tickers": 3,
+  "batches": 1,
+  "total_fetched": 3,
+  "total_saved": 3,
+  "failed_batches": 0,
+  "duration_sec": 15.45,
+  "per_worker": [
+    {
+      "worker_id": 0,
+      "batches": 1,
+      "total_fetched": 3,
+      "total_saved": 3,
+      "failed_batches": 0,
+      "duration_sec": 9.73
+    }
+  ],
+  "database": "sqlalchemy"
+}

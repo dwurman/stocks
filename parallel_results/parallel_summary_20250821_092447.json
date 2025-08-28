@@ -1,0 +1,61 @@
+{
+  "timestamp": "2025-08-21T09:24:47.666140",
+  "num_processes": 6,
+  "batch_size": 10,
+  "tickers": 120,
+  "batches": 12,
+  "total_fetched": 120,
+  "total_saved": 120,
+  "failed_batches": 0,
+  "duration_sec": 27.6,
+  "per_worker": [
+    {
+      "worker_id": 0,
+      "batches": 2,
+      "total_fetched": 20,
+      "total_saved": 20,
+      "failed_batches": 0,
+      "duration_sec": 24.43
+    },
+    {
+      "worker_id": 1,
+      "batches": 2,
+      "total_fetched": 20,
+      "total_saved": 20,
+      "failed_batches": 0,
+      "duration_sec": 25.62
+    },
+    {
+      "worker_id": 2,
+      "batches": 2,
+      "total_fetched": 20,
+      "total_saved": 20,
+      "failed_batches": 0,
+      "duration_sec": 22.68
+    },
+    {
+      "worker_id": 3,
+      "batches": 2,
+      "total_fetched": 20,
+      "total_saved": 20,
+      "failed_batches": 0,
+      "duration_sec": 24.19
+    },
+    {
+      "worker_id": 4,
+      "batches": 2,
+      "total_fetched": 20,
+      "total_saved": 20,
+      "failed_batches": 0,
+      "duration_sec": 23.14
+    },
+    {
+      "worker_id": 5,
+      "batches": 2,
+      "total_fetched": 20,
+      "total_saved": 20,
+      "failed_batches": 0,
+      "duration_sec": 23.38
+    }
+  ]
+}

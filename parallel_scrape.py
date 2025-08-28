@@ -33,9 +33,27 @@ logging.basicConfig(
 )
 
 
-def load_tickers(limit: int | None = None) -> List[str]:
-	with open(TICKER_FILE, 'r') as f:
-		tickers = [line.strip() for line in f if line.strip()]
+def load_tickers(limit: int | None = None, ticker_list: str | None = None) -> List[str]:
+	"""
+	Load tickers from file or from provided comma-separated list
+	
+	Args:
+		limit: Maximum number of tickers to load
+		ticker_list: Comma-separated string of tickers (overrides file)
+		
+	Returns:
+		List of ticker symbols
+	"""
+	if ticker_list:
+		# Use provided ticker list
+		tickers = [t.strip().upper() for t in ticker_list.split(',') if t.strip()]
+		logging.info(f'Loaded {len(tickers)} tickers from command line: {tickers[:5]}{"..." if len(tickers) > 5 else ""}')
+	else:
+		# Load from file
+		with open(TICKER_FILE, 'r') as f:
+			tickers = [line.strip() for line in f if line.strip()]
+		logging.info(f'Loaded {len(tickers)} tickers from file: {TICKER_FILE}')
+	
 	return tickers[:limit] if limit else tickers
 
 
@@ -96,14 +114,14 @@ def distribute_batches(all_batches: List[List[str]], num_workers: int) -> List[L
 	return workers
 
 
-def main(limit: int | None = None):
+def main(limit: int | None = None, ticker_list: str | None = None):
 	os.makedirs(RESULTS_DIR, exist_ok=True)
 
 	# Load tickers (load all if only-missing requested)
 	if ONLY_MISSING:
-		tickers = load_tickers(limit=None)
+		tickers = load_tickers(limit=None, ticker_list=ticker_list)
 	else:
-		tickers = load_tickers(limit=limit)
+		tickers = load_tickers(limit=limit, ticker_list=ticker_list)
 	if not tickers:
 		logging.error('No tickers loaded')
 		return 1
@@ -190,6 +208,8 @@ if __name__ == '__main__':
 		help='API sub-batch size per process call (default: 10)')
 	parser.add_argument('-t', '--ticker-file', type=str, default='all_tickers_api.txt',
 		help='Path to ticker list file (default: all_tickers_api.txt)')
+	parser.add_argument('--tickers', type=str, default=None,
+		help='Comma-separated list of specific tickers to process (overrides ticker file)')
 	parser.add_argument('-o', '--results-dir', type=str, default='parallel_results',
 		help='Directory to write summary JSON (default: parallel_results)')
 	parser.add_argument('--use-scrapingbee', action='store_true',
@@ -203,4 +223,4 @@ if __name__ == '__main__':
 	update_globals(args.processes, args.batch_size, args.ticker_file, args.results_dir, args.only_missing, args.use_scrapingbee)
 	limit_val = None if (args.limit is None or args.limit <= 0) else args.limit
 
-	raise SystemExit(main(limit=limit_val))
+	raise SystemExit(main(limit=limit_val, ticker_list=args.tickers))

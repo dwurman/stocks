@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-08-27T21:57:41.410989",
+  "num_processes": 2,
+  "batch_size": 1,
+  "tickers": 3,
+  "batches": 3,
+  "total_fetched": 3,
+  "total_saved": 3,
+  "failed_batches": 0,
+  "duration_sec": 3.66,
+  "per_worker": [
+    {
+      "worker_id": 0,
+      "batches": 2,
+      "total_fetched": 2,
+      "total_saved": 2,
+      "failed_batches": 0,
+      "duration_sec": 2.16
+    },
+    {
+      "worker_id": 1,
+      "batches": 1,
+      "total_fetched": 1,
+      "total_saved": 1,
+      "failed_batches": 0,
+      "duration_sec": 1.4
+    }
+  ]
+}

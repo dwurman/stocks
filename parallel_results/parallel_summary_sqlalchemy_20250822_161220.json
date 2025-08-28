@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-08-22T16:12:20.376994",
+  "num_processes": 10,
+  "batch_size": 10,
+  "tickers": 5000,
+  "batches": 500,
+  "total_fetched": 1707,
+  "total_saved": 1657,
+  "failed_batches": 332,
+  "duration_sec": 487.59,
+  "per_worker": [
+    {
+      "worker_id": 0,
+      "batches": 50,
+      "total_fetched": 178,
+      "total_saved": 178,
+      "failed_batches": 32,
+      "duration_sec": 477.61
+    },
+    {
+      "worker_id": 1,
+      "batches": 50,
+      "total_fetched": 180,
+      "total_saved": 180,
+      "failed_batches": 32,
+      "duration_sec": 465.75
+    },
+    {
+      "worker_id": 2,
+      "batches": 50,
+      "total_fetched": 176,
+      "total_saved": 176,
+      "failed_batches": 32,
+      "duration_sec": 474.95
+    },
+    {
+      "worker_id": 3,
+      "batches": 50,
+      "total_fetched": 170,
+      "total_saved": 150,
+      "failed_batches": 35,
+      "duration_sec": 470.66
+    },
+    {
+      "worker_id": 4,
+      "batches": 50,
+      "total_fetched": 170,
+      "total_saved": 170,
+      "failed_batches": 33,
+      "duration_sec": 475.75
+    },
+    {
+      "worker_id": 5,
+      "batches": 50,
+      "total_fetched": 170,
+      "total_saved": 170,
+      "failed_batches": 33,
+      "duration_sec": 472.97
+    },
+    {
+      "worker_id": 6,
+      "batches": 50,
+      "total_fetched": 163,
+      "total_saved": 163,
+      "failed_batches": 33,
+      "duration_sec": 481.7
+    },
+    {
+      "worker_id": 7,
+      "batches": 50,
+      "total_fetched": 160,
+      "total_saved": 160,
+      "failed_batches": 34,
+      "duration_sec": 474.32
+    },
+    {
+      "worker_id": 8,
+      "batches": 50,
+      "total_fetched": 173,
+      "total_saved": 153,
+      "failed_batches": 34,
+      "duration_sec": 470.77
+    },
+    {
+      "worker_id": 9,
+      "batches": 50,
+      "total_fetched": 167,
+      "total_saved": 157,
+      "failed_batches": 34,
+      "duration_sec": 480.88
+    }
+  ],
+  "database": "sqlalchemy"
+}

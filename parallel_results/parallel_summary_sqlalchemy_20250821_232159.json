@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-08-21T23:21:59.982663",
+  "num_processes": 10,
+  "batch_size": 10,
+  "tickers": 5000,
+  "batches": 500,
+  "total_fetched": 4356,
+  "total_saved": 4306,
+  "failed_batches": 65,
+  "duration_sec": 1340.17,
+  "per_worker": [
+    {
+      "worker_id": 0,
+      "batches": 50,
+      "total_fetched": 500,
+      "total_saved": 500,
+      "failed_batches": 0,
+      "duration_sec": 1284.17
+    },
+    {
+      "worker_id": 1,
+      "batches": 50,
+      "total_fetched": 454,
+      "total_saved": 454,
+      "failed_batches": 3,
+      "duration_sec": 1212.6
+    },
+    {
+      "worker_id": 2,
+      "batches": 50,
+      "total_fetched": 500,
+      "total_saved": 500,
+      "failed_batches": 0,
+      "duration_sec": 1311.16
+    },
+    {
+      "worker_id": 3,
+      "batches": 50,
+      "total_fetched": 473,
+      "total_saved": 463,
+      "failed_batches": 3,
+      "duration_sec": 1253.24
+    },
+    {
+      "worker_id": 4,
+      "batches": 50,
+      "total_fetched": 362,
+      "total_saved": 352,
+      "failed_batches": 14,
+      "duration_sec": 1063.73
+    },
+    {
+      "worker_id": 5,
+      "batches": 50,
+      "total_fetched": 325,
+      "total_saved": 325,
+      "failed_batches": 17,
+      "duration_sec": 1041.28
+    },
+    {
+      "worker_id": 6,
+      "batches": 50,
+      "total_fetched": 379,
+      "total_saved": 379,
+      "failed_batches": 12,
+      "duration_sec": 1144.85
+    },
+    {
+      "worker_id": 7,
+      "batches": 50,
+      "total_fetched": 500,
+      "total_saved": 490,
+      "failed_batches": 1,
+      "duration_sec": 1310.44
+    },
+    {
+      "worker_id": 8,
+      "batches": 50,
+      "total_fetched": 363,
+      "total_saved": 353,
+      "failed_batches": 14,
+      "duration_sec": 1137.11
+    },
+    {
+      "worker_id": 9,
+      "batches": 50,
+      "total_fetched": 500,
+      "total_saved": 490,
+      "failed_batches": 1,
+      "duration_sec": 1333.33
+    }
+  ],
+  "database": "sqlalchemy"
+}
